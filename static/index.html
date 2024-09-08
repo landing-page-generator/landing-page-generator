@@ -18,6 +18,15 @@
     <p id="response"></p>
 
     <script>
+        // Add an event listener to detect when the Enter key is pressed
+        document.getElementById('inputString').addEventListener('keypress', function(event) {
+            // Check if the Enter key is pressed
+            if (event.key === 'Enter') {
+                // Trigger the button click
+                document.getElementById('generateButton').click();
+            }
+        });
+
         // Function to send API request
         async function sendRequest() {
             // Get the input value
@@ -44,7 +53,7 @@
                 const result = await response.json();
 
                 // Display the resulting string in the paragraph
-                document.getElementById('response').innerHTML = '<a href="' + result.url + '" target="_blank">' + result.url + '</a>' + ' ' + result.message;
+                document.getElementById('response').innerHTML = '<a href="' + result.url + '" target="_blank">' + result.url + '</a>' + '<br>' + result.message;
 
             } catch (error) {
                 // Handle any errors
