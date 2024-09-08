@@ -1,7 +1,7 @@
-langchain
-langchain-community
+# langchain
+# langchain-community
 # langchain-google-genai
-langchain-openai
+# langchain-openai
 pygithub
 python-dotenv
 requests
