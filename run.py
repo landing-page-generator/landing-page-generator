@@ -3,7 +3,9 @@ import os
 import sys
 from langchain_openai import ChatOpenAI
 
-from git import Repo
+from github import Github
+from github import Auth
+
 from pathlib import Path
 from dotenv import load_dotenv
 
@@ -12,10 +14,9 @@ _ = load_dotenv(Path(__file__).parent / '.env')
 
 def generate_landing(idea: str) -> str:
     # init repo
-    repo_url = 'git@github.com:landing-page-generator/landing-page-generator.github.io.git'
-    repo_dir = 'landing-page-generator.github.io'
-    if not os.path.exists(repo_dir):
-        Repo.clone_from(repo_url, repo_dir)
+    auth = Auth.Token(os.environ['GITHUB_ACCESS_TOKEN'])
+    g = Github(auth=auth)
+    repo = g.get_repo('landing-page-generator/landing-page-generator.github.io')
 
     openai_api_key = os.environ['OPENAI_API_KEY']
     openai_model = os.environ.get('OPENAI_MODEL', 'gpt-4o-2024-05-13')
@@ -31,16 +32,12 @@ def generate_landing(idea: str) -> str:
     # deploy HTML page to github pages
     now = datetime.datetime.now().timestamp()
     filename = f'{now}.html'
-    filepath = os.path.join(repo_dir, filename)
-    print('File:', filepath)
-    # write content to file
-    with open(filepath, 'w') as f:
-        f.write(html_content)
-    # commit and push
-    repo = Repo(repo_dir)
-    repo.git.add(filename)
-    repo.git.commit('-m', f'Add idea: {idea}')
-    repo.git.push()
+    repo.create_file(
+        path=filename,
+        message=f'Add idea: {idea}',
+        content=html_content,
+        branch='main'
+    )
     url = f'https://landing-page-generator.github.io/{filename}'
     print('URL:', url)
     print('Please wait a minute while it\'s deployed.')
