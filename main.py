@@ -4,11 +4,12 @@ from fastapi import FastAPI
 from fastapi.responses import HTMLResponse
 from whitenoise import WhiteNoise
 from pydantic import BaseModel
-from run import generate_landing
+# from run import generate_landing
 
 app = FastAPI()
 
 app.add_middleware(WhiteNoise, root="static", prefix="/static")
+
 
 class InputData(BaseModel):
     idea: str
@@ -24,7 +25,7 @@ async def read_index():
 @app.post('/api/v1/generate')
 async def generate_landing_api(input_data: InputData):
     idea = input_data.idea
-    url = generate_landing(idea)
+    # url = generate_landing(idea)
     return {'url': url}
 
 
