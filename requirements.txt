@@ -4,3 +4,5 @@ langchain-google-genai
 pygithub
 python-dotenv
 requests
+fastapi
+uvicorn
