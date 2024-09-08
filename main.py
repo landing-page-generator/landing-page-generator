@@ -4,11 +4,14 @@ from fastapi import FastAPI
 from fastapi.responses import HTMLResponse
 from whitenoise import WhiteNoise
 from pydantic import BaseModel
+from starlette.staticfiles import StaticFiles
 # from run import generate_landing
 
 app = FastAPI()
 
-app.add_middleware(WhiteNoise, root="static", prefix="/static")
+app.mount("/static", StaticFiles(directory="static"), name="static")
+
+app.add_middleware(WhiteNoise, root="static", prefix="static/")
 
 
 class InputData(BaseModel):
