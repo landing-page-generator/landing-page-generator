@@ -31,7 +31,8 @@ def main():
     print('AI model:', openai_model)
     prompt = (
         f'Create a landing page for a new product: "{idea}". '
-        'Output ONLY html, without markdown or other formats.'
+        'Output ONLY html, without markdown or other formats. '
+        'Add "Made with LPG" at the bottom of the page with a link to https://landing-page-generator.github.io.'
     )
     print('Prompt:', prompt)
 
@@ -51,6 +52,7 @@ def main():
     repo.git.commit('-m', f'Add idea: {idea}')
     repo.git.push()
     print(f'URL: https://landing-page-generator.github.io/{filename}')
+    print('Please wait a minute while it\'s deployed.')
     print()
 
 
