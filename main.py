@@ -22,7 +22,8 @@ async def read_index():
 @app.post('/api/v1/generate')
 async def generate_landing_api(input_data: InputData):
     idea = input_data.idea
-    url = generate_landing(idea)
+    url = idea
+    # url = generate_landing(idea)
     return {'url': url}
 
 
