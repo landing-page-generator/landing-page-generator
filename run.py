@@ -51,6 +51,7 @@ def main():
     repo.git.commit('-m', f'Add idea: {idea}')
     repo.git.push()
     print(f'URL: https://landing-page-generator.github.io/{filename}')
+    print()
 
 
 if __name__ == "__main__":
