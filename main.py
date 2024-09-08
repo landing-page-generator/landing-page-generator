@@ -22,8 +22,11 @@ async def read_index():
 @app.post('/api/v1/generate')
 async def generate_landing_api(input_data: InputData):
     idea = input_data.idea
-    url = generate_landing(idea)
-    return {'url': url}
+    try:
+        url = generate_landing(idea)
+        return {'url': url, 'message': 'Please wait a minute while it\'s deployed.'}
+    except Exception as e:
+        return {'url': '', 'message': 'Exception:' + str(e)}
 
 
 if __name__ == '__main__':

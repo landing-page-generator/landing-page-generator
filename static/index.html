@@ -44,7 +44,7 @@
                 const result = await response.json();
 
                 // Display the resulting string in the paragraph
-                document.getElementById('response').innerHTML = '<a href="' + result.url + '" target="_blank">' + result.url + '</a>' + ' (please allow oneп minute to deploy)';
+                document.getElementById('response').innerHTML = '<a href="' + result.url + '" target="_blank">' + result.url + '</a>' + ' ' + result.message;
 
             } catch (error) {
                 // Handle any errors
