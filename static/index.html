@@ -32,8 +32,8 @@
     <button id="generateButton" onclick="sendRequest()">Generate</button>
 
     <!-- Display the response here -->
-    <p id="response"></p>
     <p id="loader"></p>
+    <p id="response"></p>
 
     <script>
         // Add an event listener to detect when the Enter key is pressed
@@ -99,7 +99,7 @@
                 const result = await response.json();
 
                 // Display the resulting string in the paragraph
-                document.getElementById('response').innerHTML = '<a href="' + result.url + '" target="_blank">' + result.url + '</a>';
+                document.getElementById('response').innerHTML = 'Your page will be here: <a href="' + result.url + '" target="_blank">' + result.url + '</a>';
                 if (result.url) {
                     document.getElementById('loader').innerHTML = 'Please wait. Deploying...';
                     while (true) {
@@ -107,6 +107,7 @@
                             const response = await fetch(result.url, { method: 'HEAD' });
 
                             if (response.status !== 404) {
+                                document.getElementById('response').innerHTML = 'Your page is here: <a href="' + result.url + '" target="_blank">' + result.url + '</a>';
                                 document.getElementById('loader').innerHTML = '<b>Deployed!</b>';
                                 progress_stop = true;
                                 break
