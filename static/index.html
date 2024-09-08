@@ -5,8 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Landing Page Generator</title>
+    <style>
+        #progress-container {
+            width: 100%;
+            background-color: #ddd;
+            overflow: hidden;
+        }
+
+        #progress-bar {
+            width: 0%;
+            height: 20px;
+            background-color: #4caf50;
+            transition: width 0.1s;
+        }
+    </style>
 </head>
-<body align="center">
+<body align="center" style="margin: 0">
+    <div id="progress-container">
+        <div id="progress-bar"></div>
+    </div>
 
     <h1>Generate Your Landing Page</h1>
 
@@ -16,6 +33,7 @@
 
     <!-- Display the response here -->
     <p id="response"></p>
+    <p id="loader"></p>
 
     <script>
         // Add an event listener to detect when the Enter key is pressed
@@ -29,6 +47,34 @@
 
         // Function to send API request
         async function sendRequest() {
+
+            // Fake progress bar
+            document.getElementById('response').innerHTML = '';
+            document.getElementById('loader').innerHTML = '';
+
+            let progress = 0;
+            const progressBar = document.getElementById('progress-bar');
+            let progress_stop = false;
+
+            function updateProgress() {
+                progress += (95 - progress) / 100;
+                if (progress > 100) progress = 100;
+
+                if (progress_stop) {
+                    progress = 100;
+                }
+                progressBar.style.width = progress + '%';
+                if (progress_stop) {
+                    return;
+                }
+                if (progress < 100) {
+                    setTimeout(updateProgress, 100);
+                }
+            }
+
+            // Start the progress
+            updateProgress();
+
             // Get the input value
             const input = document.getElementById('inputString').value;
             const button = document.getElementById('generateButton');
@@ -53,7 +99,25 @@
                 const result = await response.json();
 
                 // Display the resulting string in the paragraph
-                document.getElementById('response').innerHTML = '<a href="' + result.url + '" target="_blank">' + result.url + '</a>' + '<br>' + result.message;
+                document.getElementById('response').innerHTML = '<a href="' + result.url + '" target="_blank">' + result.url + '</a>';
+                if (result.url) {
+                    document.getElementById('loader').innerHTML = 'Please wait. Deploying...';
+                    while (true) {
+                        try {
+                            const response = await fetch(result.url, { method: 'HEAD' });
+
+                            if (response.status !== 404) {
+                                document.getElementById('loader').innerHTML = '<b>Deployed!</b>';
+                                progress_stop = true;
+                                break
+                            }
+                        } catch (error) {
+                        }
+                        await new Promise(resolve => setTimeout(resolve, 1000));
+                    }
+                } else {
+                    document.getElementById('loader').innerHTML = result.message;
+                }
 
             } catch (error) {
                 // Handle any errors
