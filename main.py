@@ -2,21 +2,23 @@ import uvicorn
 
 from fastapi import FastAPI
 from fastapi.responses import HTMLResponse
-from pathlib import Path
+from whitenoise import WhiteNoise
 from pydantic import BaseModel
 from run import generate_landing
 
 app = FastAPI()
 
+app.add_middleware(WhiteNoise, root="static", prefix="/static")
 
 class InputData(BaseModel):
     idea: str
 
 
-@app.get('/', response_class=HTMLResponse)
-async def root():
-    content = Path('ui/index.html').read_text()
-    return content
+@app.get("/", response_class=HTMLResponse)
+async def read_index():
+    with open("static/index.html", "r") as file:
+        content = file.read()
+    return HTMLResponse(content)
 
 
 @app.post('/api/v1/generate')
