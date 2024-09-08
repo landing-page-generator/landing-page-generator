@@ -41,9 +41,11 @@ def generate_landing(idea: str) -> str:
     repo.git.add(filename)
     repo.git.commit('-m', f'Add idea: {idea}')
     repo.git.push()
-    print(f'URL: https://landing-page-generator.github.io/{filename}')
+    url = f'https://landing-page-generator.github.io/{filename}'
+    print('URL:', url)
     print('Please wait a minute while it\'s deployed.')
     print()
+    return url
 
 
 def main():

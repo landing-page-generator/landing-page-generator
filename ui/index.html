@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page Generator</title>
+</head>
+<body align="center">
+
+    <h1>Generate Your Landing Page</h1>
+
+    <!-- Input field for string -->
+    <input type="text" id="inputString" placeholder="Enter your idea" size="60">
+    <button id="generateButton" onclick="sendRequest()">Generate</button>
+
+    <!-- Display the response here -->
+    <p id="response"></p>
+
+    <script>
+        // Function to send API request
+        async function sendRequest() {
+            // Get the input value
+            const input = document.getElementById('inputString').value;
+            const button = document.getElementById('generateButton');
+
+            button.disabled = true;
+            button.innerText = 'Generating...';
+
+            // Prepare the data to be sent
+            const data = { idea: input };
+
+            try {
+                // Send POST request
+                const response = await fetch('/api/v1/generate', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data),
+                });
+
+                // Get the response data
+                const result = await response.json();
+
+                // Display the resulting string in the paragraph
+                document.getElementById('response').innerHTML = '<a href="' + result.url + '" target="_blank">' + result.url + '</a>' + ' (please allow oneп minute to deploy)';
+
+            } catch (error) {
+                // Handle any errors
+                document.getElementById('response').innerText = 'Error: ' + error.message;
+            }
+            button.disabled = false;
+            button.innerText = 'Generate';
+
+        }
+    </script>
+
+</body>
+</html>
