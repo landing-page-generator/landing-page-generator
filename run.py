@@ -1,7 +1,7 @@
 import datetime
 import os
 import sys
-from langchain_openai import ChatOpenAI
+# from langchain_openai import ChatOpenAI
 from langchain_google_genai import ChatGoogleGenerativeAI
 
 from github import Github
