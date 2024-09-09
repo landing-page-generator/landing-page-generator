@@ -1,18 +1,42 @@
+# Landing Page Generator
+
+One-button landing page generator -- transforms your idea into a live landing page in seconds.
+
+Deployed at https://landing-page-generator-tau.vercel.app
+
+Hacked on [Sundai](https://sundai.club), Sep 8, 2024
+
 # Installation
 
 ```bash
 cp .env.example .env
-# add your OpenAI API key to .env
+nano .env
+# then add your GitHub and Gemini secret keys to the .env file
 virtualenv venv
 source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-NB! Your machine should have push access to the repo `git@github.com:landing-page-generator/landing-page-generator.github.io.git`
-
-GIT_PYTHON_GIT_EXECUTABLE=/usr/bin/git
 # Run
+
+## Command-line
 
 ```bash
 python run.py 'My great idea'
 ```
+
+## Local server
+
+```bash
+python main.py
+```
+
+or 
+
+```bash
+uvicorn main:app --reload
+```
+
+# Production deployment  
+
+Auto deployed to Vercel https://landing-page-generator-tau.vercel.app at each commit to `main` branch.
