@@ -29,7 +29,7 @@ def generate_landing(idea: str) -> str:
     # llm = ChatGoogleGenerativeAI(model=gemini_model, api_key=gemini_api_key, temperature=0.6)
     print('AI model:', gemini_model)
 
-    prompt = Path('prompts/second-version1.txt').read_text() + f'\n{idea}\n' + Path('prompts/second-version2.txt').read_text()
+    prompt = Path('prompts/master-part1.txt').read_text() + f'\n{idea}\n' + Path('prompts/master-part2.txt').read_text()
     # prompt = prompt.format(idea=idea)
 
     # call openai using langchain
@@ -37,8 +37,9 @@ def generate_landing(idea: str) -> str:
     html_content = gemini(prompt)
 
     # editor_prompt
-    refine_prompt = Path('prompts/refine.txt').read_text() + f'\n{html_content}\n'
-    refined_html_content = gemini(refine_prompt)
+    # refine_prompt = Path('prompts/refine.txt').read_text() + f'\n{html_content}\n'
+    # refined_html_content = gemini(refine_prompt)
+    refined_html_content = html_content
 
     # deploy HTML page to github pages
     now = datetime.datetime.now().timestamp()

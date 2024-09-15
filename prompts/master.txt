@@ -1,3 +1,11 @@
+Generate a complete landing page index file for the following [[concept]].
+Output ONLY html, without markdown or other formats.
+Add "Made with LPG" at the bottom of the page with a link to https://landing-page-generator-tau.vercel.app
+
+[[concept]]
+
+[[CONCEPT]]
+
 
 [[instructions]]
 Master Prompt for Landing Page Generator:
