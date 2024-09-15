@@ -29,7 +29,7 @@ def generate_landing(idea: str) -> str:
     # llm = ChatGoogleGenerativeAI(model=gemini_model, api_key=gemini_api_key, temperature=0.6)
     print('AI model:', gemini_model)
 
-    prompt = Path('prompts/master-part1.txt').read_text() + f'\n{idea}\n' + Path('prompts/master-part2.txt').read_text()
+    prompt = Path('prompts/master.txt').read_text().replace('[[CONCEPT]]', idea)
     # prompt = prompt.format(idea=idea)
 
     # call openai using langchain
