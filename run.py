@@ -36,13 +36,17 @@ def generate_landing(idea: str) -> str:
     # html_content = llm.invoke(prompt).content
     html_content = gemini(prompt)
 
+    # editor_prompt
+    refine_prompt = Path('prompts/refine.txt').read_text() + f'\n{html_content}\n'
+    refined_html_content = gemini(refine_prompt)
+
     # deploy HTML page to github pages
     now = datetime.datetime.now().timestamp()
     filename = f'{now}.html'
     repo.create_file(
         path=filename,
         message=f'Add idea: {idea}',
-        content=html_content,
+        content=refined_html_content,
         branch='main'
     )
     url = f'https://landing-page-generator.github.io/{filename}'
