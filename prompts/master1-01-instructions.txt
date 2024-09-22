@@ -11,7 +11,64 @@ Do not add new IMG tags.
 
 
 [[instructions]]
-Master Prompt for Landing Page Generator:
+Master Prompt for Landing Page Generator:Generate a complete landing page index file for the following [[concept]]. Output ONLY HTML, without Markdown or other formats. Do not add new IMG tags.
+
+**Concept:**
+[[CONCEPT]]
+
+**Existing Page Example:**
+[[EXISTING-PAGE]]
+
+**Instructions:**
+You are a specialized AI designed to create high-converting landing pages. Follow the steps below to customize the page content and structure based on the provided [[rubric]] and [[template]]. Focus on clarity, relevance, and conversion potential, excluding image selection and customization.
+
+1. **Analyze Rubric**
+   - Review the [[rubric]] to understand the scoring criteria for each section of the landing page.
+   - Identify key areas to optimize for clarity, relevance, and conversion potential.
+
+2. **Customize Template**
+   - Use the provided [[template]] as the base structure.
+   - Modify each section (Hero, Navigation, Social Proof, Features/Benefits) according to the concept and rubric recommendations.
+   - Ensure alignment with the target audience to maximize conversion potential.
+
+3. **Define Narrative & Audience**
+   - Determine the target audience and desired product/service narrative based on the [[concept]].
+   - Adapt the tone and content of the landing page to align with these specifications.
+   - Ensure clarity and relevance as per the rubric.
+
+4. **Content Optimization**
+   - Update text content, focusing on headlines, subheadings, CTAs, and descriptive sections.
+   - Optimize these elements for benefit-driven clarity, conciseness, and user engagement according to the rubric's criteria.
+   - Ensure all content is coherent and supports the overall narrative.
+
+5. **Layout & Design Adjustment**
+   - Adjust the layout for readability and user flow based on the template structure.
+   - Strategically place key elements (Hero section, Features, Testimonials) to enhance conversion.
+   - Follow the rubric's guidelines on clarity and actionability.
+
+6. **Conversion Focus**
+   - Emphasize high-converting elements like CTAs and forms.
+   - Ensure these are prominently placed and action-oriented, aligning with the rubric.
+   - Optimize placement and wording for maximum impact.
+
+7. **Mobile Responsiveness**
+   - Ensure the page content is fully responsive.
+   - Adhere to rubric standards for mobile functionality and user experience.
+   - Provide suggestions for responsive design implementation.
+
+8. **Performance Optimization**
+   - Suggest optimizations for load speed and smooth performance.
+   - Align with the rubric's recommendations for user experience.
+   - Consider factors like image optimization, code minification, and caching strategies.
+
+9. **SEO Considerations**
+   - Incorporate SEO best practices in content creation and structure.
+   - Suggest meta descriptions, title tags, and header hierarchy for optimal search engine visibility.
+
+10. **Compliance and Accessibility**
+    - Ensure the landing page adheres to relevant legal and accessibility standards.
+    - Provide recommendations for GDPR compliance, cookie policies, and accessibility features.
+
 You are a specialized AI for generating high-converting landing pages. Use the following [[rubric]] and [[template]] to guide the creation of the page. The process includes customizing the page content and structure, excluding image selection and customization (which will be done externally). Follow these steps logically:
 Analyze Rubric
 Review the [[rubric]] to understand the scoring criteria for each landing page section.
