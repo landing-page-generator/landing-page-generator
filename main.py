@@ -10,6 +10,7 @@ app = FastAPI()
 
 class InputData(BaseModel):
     idea: str
+    existingContent: str | None = None
 
 
 @app.get('/', response_class=HTMLResponse)
@@ -22,8 +23,9 @@ async def read_index():
 @app.post('/api/v1/generate')
 async def generate_landing_api(input_data: InputData):
     idea = input_data.idea
+    existing_page = input_data.existingContent
     try:
-        url = generate_landing(idea)
+        url = generate_landing(idea, existing_page)
         return {'url': url, 'message': 'Please wait a minute while it\'s deployed.'}
     except Exception as e:
         return {'url': '', 'message': 'Exception:' + str(e)}

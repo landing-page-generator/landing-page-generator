@@ -14,7 +14,7 @@ from dotenv import load_dotenv
 _ = load_dotenv(Path(__file__).parent / '.env')
 
 
-def generate_landing(idea: str) -> str:
+def generate_landing(idea: str, existing_page: str) -> str:
     # init repo
     auth = Auth.Token(os.environ['GITHUB_ACCESS_TOKEN'])
     g = Github(auth=auth)
@@ -29,7 +29,8 @@ def generate_landing(idea: str) -> str:
     # llm = ChatGoogleGenerativeAI(model=gemini_model, api_key=gemini_api_key, temperature=0.6)
     print('AI model:', gemini_model)
 
-    prompt = Path('prompts/master1.txt').read_text().replace('[[CONCEPT]]', idea)
+    existing_page = existing_page or 'No existing page'
+    prompt = Path('prompts/master1.txt').read_text().replace('[[CONCEPT]]', idea).replace('[[EXISTING-PAGE]]', existing_page)
     # prompt = prompt.format(idea=idea)
 
     # call openai using langchain

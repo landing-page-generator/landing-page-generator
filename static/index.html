@@ -19,7 +19,7 @@
             transition: width 0.1s;
         }
 
-         .footer {
+        .footer {
             position: fixed;
             right: 10px;
             bottom: 10px;
@@ -29,8 +29,25 @@
         #inputString {
             width: 60%;
             min-height: 50px;
+            resize: vertical;
+            overflow: hidden;
+            margin-bottom: 10px;
+            padding: 5px;
+        }
+
+        #inputUrl {
+            width: 60%;
             resize: none;
             overflow: hidden;
+            margin-bottom: 10px;
+            padding: 5px;
+        }
+
+        #response {
+            width: 60%;
+            margin: 10px auto;
+            padding: 5px;
+            text-align: left;
         }
 
         #generateButton {
@@ -48,10 +65,11 @@
 
     <!-- Textarea for string input -->
     <textarea id="inputString" placeholder="Enter your idea" rows="1"></textarea>
+    <!-- Input field for existing landing page URL -->
+    <input type="url" id="inputUrl" placeholder="Enter existing landing page URL (optional)">
     <button id="generateButton" onclick="sendRequest()">Generate</button>
 
     <!-- Display the response here -->
-    <p id="loader"></p>
     <p id="response"></p>
 
     <script>
@@ -80,7 +98,6 @@
 
             // Fake progress bar
             document.getElementById('response').innerHTML = '';
-            document.getElementById('loader').innerHTML = '';
 
             let progress = 0;
             const progressBar = document.getElementById('progress-bar');
@@ -105,15 +122,29 @@
             // Start the progress
             updateProgress();
 
-            // Get the input value
+            // Get the input values
             const input = document.getElementById('inputString').value;
+            const existingUrl = document.getElementById('inputUrl').value;
             const button = document.getElementById('generateButton');
 
             button.disabled = true;
-            button.innerText = 'Generating...';
 
             // Prepare the data to be sent
-            const data = { idea: input };
+            let data = { idea: input };
+
+            // If existingUrl is provided, fetch its content
+            if (existingUrl) {
+                document.getElementById('response').innerHTML = 'Fetching existing landing page...<br>';
+                try {
+                    const response = await fetch(existingUrl);
+                    const existingContent = await response.text();
+                    data.existingContent = existingContent;
+                } catch (error) {
+                    document.getElementById('response').innerHTML += '<span style="color:red">Error fetching existing URL content: ' + error.message + '</span><br>';
+                }
+            }
+
+            document.getElementById('response').innerHTML = 'Generating a new landing page...<br>';
 
             try {
                 // Send POST request
@@ -128,17 +159,16 @@
                 // Get the response data
                 const result = await response.json();
 
-                // Display the resulting string in the paragraph
-                document.getElementById('response').innerHTML = 'Your page will be here: <a href="' + result.url + '" target="_blank">' + result.url + '</a>';
                 if (result.url) {
-                    document.getElementById('loader').innerHTML = 'Please wait. Deploying...';
+                    document.getElementById('response').innerHTML += 'Deploying...<br>';
                     while (true) {
                         try {
                             const response = await fetch(result.url, { method: 'HEAD' });
 
                             if (response.status !== 404) {
-                                document.getElementById('response').innerHTML = 'Your page is here: <a href="' + result.url + '" target="_blank">' + result.url + '</a>';
-                                document.getElementById('loader').innerHTML = '<b>Deployed!</b>';
+                                document.getElementById('response').innerHTML += 'Done: <a href="' + result.url + '" target="_blank">' + result.url + '</a>';
+                                // Add URL to existing page input
+                                document.getElementById('inputUrl').value = result.url;
                                 progress_stop = true;
                                 break
                             }
@@ -147,12 +177,12 @@
                         await new Promise(resolve => setTimeout(resolve, 1000));
                     }
                 } else {
-                    document.getElementById('loader').innerHTML = result.message;
+                    document.getElementById('response').innerHTML += result.message;
                 }
 
             } catch (error) {
                 // Handle any errors
-                document.getElementById('response').innerText = 'Error: ' + error.message;
+                document.getElementById('response').innerText = '<span style="color:red">Error: ' + error.message + '</span>';
             }
             button.disabled = false;
             button.innerText = 'Generate';

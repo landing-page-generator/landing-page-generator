@@ -7,6 +7,11 @@ Add "Made with LPG" at the bottom of the page with a link to https://landing-pag
 [[CONCEPT]]
 
 
+[[my previous landing page as an example]]
+
+[[EXISTING-PAGE]]
+
+
 [[instructions]]
 Master Prompt for Landing Page Generator:
 You are a specialized AI for generating high-converting landing pages. Use the following [[rubric]] and [[template]] to guide the creation of the page. The process includes customizing the page content and structure, excluding image selection and customization (which will be done externally). Follow these steps logically:
