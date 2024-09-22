@@ -10,7 +10,8 @@ app = FastAPI()
 
 class InputData(BaseModel):
     idea: str
-    existingContent: str | None = None
+    existing_page_url: str | None = None
+    existing_page: str | None = None
     email: str | None = None
 
 
@@ -58,11 +59,12 @@ async def subscribe_email(request: Request):
 @app.post('/api/v1/generate')
 async def generate_landing_api(input_data: InputData):
     idea = input_data.idea
-    existing_page = input_data.existingContent
+    existing_page = input_data.existing_page
+    existing_page_url = input_data.existing_page_url
     author_email = input_data.email
 
     try:
-        url = generate_landing(idea, existing_page)
+        url, html = generate_landing(idea, existing_page)
 
         # Save email and URL to Supabase
         from supabase import create_client, Client
@@ -72,7 +74,14 @@ async def generate_landing_api(input_data: InputData):
         supabase_key: str = os.environ.get("SUPABASE_KEY")
         supabase: Client = create_client(supabase_url, supabase_key)
 
-        supabase.table('pages').insert({"page_url": url, "author_email": author_email, "idea": idea, "existing_page_url": existing_page}).execute()
+        supabase.table('pages').insert({
+            "idea": idea, 
+            "existing_page_url": existing_page_url,
+            "existing_page": existing_page,
+            "author_email": author_email, 
+            "page_url": url, 
+            "page": html,
+            }).execute()
 
         return {'url': url, 'message': 'Please wait a minute while it\'s deployed.'}
     except Exception as e:

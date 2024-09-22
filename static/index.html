@@ -146,7 +146,7 @@
             feeling_lucky_button.disabled = true;
 
             // Prepare the data to be sent
-            let data = { idea: input, email: userEmail };
+            let data = { idea: input, email: userEmail, existing_page_url: existingUrl};
 
             // If existingUrl is provided, fetch its content
             if (existingUrl) {
@@ -157,7 +157,7 @@
                         throw new Error(`HTTP error! status: ${response.status}`);
                     }
                     const existingContent = await response.text();
-                    data.existingContent = existingContent;
+                    data.existing_page = existingContent;
                 } catch (error) {
                     let errorMessage = error.message;
                     if (error instanceof TypeError) {

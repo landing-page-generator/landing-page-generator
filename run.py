@@ -81,7 +81,7 @@ def generate_landing(idea: str, existing_page: str) -> str:
     print('URL:', url)
     print('Please wait a minute while it\'s deployed.')
     print()
-    return url
+    return url, refined_html_content
 
 
 def generate_random_idea() -> str:
