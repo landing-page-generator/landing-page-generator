@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Landing Page Generator</title>
     <style>
+        body {
+            text-align: center;
+            margin: 0;
+        }
+
         #progress-container {
             width: 100%;
             background-color: #ddd;
@@ -26,8 +31,15 @@
             font-size: 14px;
         }
 
-        #inputString, #inputUrl, #inputEmail {
+        #inputString {
             width: 60%;
+            resize: none;
+            overflow: hidden;
+            margin-bottom: 10px;
+            padding: 5px;
+        }
+        #inputUrl, #inputEmail {
+            width: 50%;
             resize: none;
             overflow: hidden;
             margin-bottom: 10px;
@@ -52,7 +64,7 @@
         }
     </style>
 </head>
-<body align="center" style="margin: 0">
+<body>
     <div id="progress-container">
         <div id="progress-bar"></div>
     </div>
