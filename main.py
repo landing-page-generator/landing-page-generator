@@ -63,15 +63,14 @@ async def generate_landing_api(input_data: InputData):
         url = generate_landing(idea, existing_page)
 
         # Save email and URL to Supabase
-        if author_email:
-            from supabase import create_client, Client
-            import os
+        from supabase import create_client, Client
+        import os
 
-            supabase_url: str = os.environ.get("SUPABASE_URL")
-            supabase_key: str = os.environ.get("SUPABASE_KEY")
-            supabase: Client = create_client(supabase_url, supabase_key)
+        supabase_url: str = os.environ.get("SUPABASE_URL")
+        supabase_key: str = os.environ.get("SUPABASE_KEY")
+        supabase: Client = create_client(supabase_url, supabase_key)
 
-            supabase.table('pages').insert({"page_url": url, "author_email": author_email}).execute()
+        supabase.table('pages').insert({"page_url": url, "author_email": author_email, "idea": idea}).execute()
 
         return {'url': url, 'message': 'Please wait a minute while it\'s deployed.'}
     except Exception as e:
