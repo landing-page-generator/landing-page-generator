@@ -937,8 +937,9 @@ Provide recommendations for GDPR compliance, cookie policies, and accessibility 
     <section id="signup" class="text-center py-12 bg-blue-100">
         <h2 class="text-3xl font-bold mb-4">Get Started with Somedai.club</h2>
         <p class="text-gray-600 mb-8">Contact us today to explore how we can help your organization innovate with AI.</p>
-        <form action="submit_form_url" method="post" class="max-w-md mx-auto px-4">
+        <form action="https://landing-page-generator-tau.vercel.app/api/v1/subscribe" method="post" class="max-w-md mx-auto px-4">
             <input type="email" name="email" placeholder="Enter your email" class="w-full px-4 py-2 mb-4 border rounded">
+            <input type="hidden" name="page_url" value="window.location.href">
             <button type="submit" class="w-full px-6 py-3 bg-blue-500 text-white rounded-full hover:bg-blue-600 transition duration-300">Get Started</button>
         </form>
     </section>
