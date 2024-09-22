@@ -1,6 +1,6 @@
 import uvicorn
 
-from fastapi import FastAPI
+from fastapi import FastAPI, Request
 from fastapi.responses import HTMLResponse
 from pydantic import BaseModel, EmailStr
 from run import generate_landing
@@ -26,8 +26,12 @@ async def read_index():
 
 
 @app.post('/api/v1/subscribe')
-async def subscribe_email(page_url: str, email: str):
+async def subscribe_email(request: Request):
     try:
+        form_data = await request.form()
+        page_url = form_data.get('page_url')
+        email = form_data.get('email')
+
         # Assuming you have a Supabase client set up
         from supabase import create_client, Client
         import os
@@ -36,12 +40,12 @@ async def subscribe_email(page_url: str, email: str):
         key: str = os.environ.get("SUPABASE_KEY")
         supabase: Client = create_client(url, key)
 
-        # Insert the email and page_id into Supabase
+        # Insert the email and page_url into Supabase
         data = supabase.table('subscriptions').insert({"page_url": page_url, "email": email}).execute()
 
-        return {"message": "Subscription successful"}
+        return HTMLResponse("<html><body><h1>Subscription successful</h1></body></html>")
     except Exception as e:
-        return {"error": str(e)}
+        return HTMLResponse(f"<html><body><h1>Error: {str(e)}</h1></body></html>")
 
 
 @app.post('/api/v1/generate')
