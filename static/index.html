@@ -62,12 +62,25 @@
             display: inline-block;
             margin: 10px 5px;
         }
+
+        #demo-video {
+            position: fixed;
+            top: 20px;
+            right: 0px;
+            border: 1px;
+            width: 200px;
+        }
     </style>
 </head>
 <body>
     <div id="progress-container">
         <div id="progress-bar"></div>
     </div>
+
+    <video id="demo-video" autoplay loop muted controls>
+        <source src="https://landing-page-generator.github.io/The%20Landing%20Page%20Generator.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
 
     <h1>Generate Your Landing Page</h1>
 
