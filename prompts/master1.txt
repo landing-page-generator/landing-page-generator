@@ -55,551 +55,451 @@ Provide recommendations for GDPR compliance, cookie policies, and accessibility 
 
 [[rubric]]
 {
-  "landingPageRubric": [
-    {
-      "section": "Hero Section (Header)",
-      "customizableElements": [
-        "Background image",
-        "Heading",
-        "Subheading",
-        "CTA button text and link"
-      ],
-      "rubric": {
-        "backgroundImage": [
-          {
-            "criterion": "Relevance",
-            "description": "Does the image relate to the product/service?",
-            "maxPoints": 5
-          },
-          {
-            "criterion": "Quality",
-            "description": "Is the image high-resolution and visually appealing?",
-            "maxPoints": 5
-          },
-          {
-            "criterion": "Contrast",
-            "description": "Does it provide good contrast for text overlay?",
-            "maxPoints": 5
-          }
-        ],
-        "heading": [
-          {
-            "criterion": "Clarity",
-            "description": "Does it clearly state the USP?",
-            "maxPoints": 5
-          },
-          {
-            "criterion": "Benefit-driven",
-            "description": "Does it focus on user benefits?",
-            "maxPoints": 5
-          },
-          {
-            "criterion": "Conciseness",
-            "description": "Is it brief and impactful?",
-            "maxPoints": 5
-          }
-        ],
-        "subheading": [
-          {
-            "criterion": "Support",
-            "description": "Does it effectively support the main heading?",
-            "maxPoints": 5
-          },
-          {
-            "criterion": "Detail",
-            "description": "Does it provide additional relevant information?",
-            "maxPoints": 5
-          },
-          {
-            "criterion": "Clarity",
-            "description": "Is it easy to understand?",
-            "maxPoints": 5
-          }
-        ],
-        "ctaButton": [
-          {
-            "criterion": "Visibility",
-            "description": "Is it prominently placed and high-contrast?",
-            "maxPoints": 5
-          },
-          {
-            "criterion": "Action-oriented",
-            "description": "Does the text clearly indicate the next step?",
-            "maxPoints": 5
-          },
-          {
-            "criterion": "Relevance",
-            "description": "Does it align with the heading and subheading?",
-            "maxPoints": 5
-          }
-        ]
-      }
-    },
-    {
-      "section": "Navigation",
-      "customizableElements": [
-        "Logo/Brand name",
-        "Menu items"
-      ],
-      "rubric": {
-        "logoBrandName": [
-          {
-            "criterion": "Visibility",
-            "description": "Is it clear and easy to read?",
-            "maxPoints": 5
-          },
-          {
-            "criterion": "Relevance",
-            "description": "Does it reflect the brand identity?",
-            "maxPoints": 5
-          }
-        ],
-        "menuItems": [
-          {
-            "criterion": "Clarity",
-            "description": "Are the labels clear and descriptive?",
-            "maxPoints": 5
-          },
-          {
-            "criterion": "Relevance",
-            "description": "Do they cover key sections of the landing page?",
-            "maxPoints": 5
-          },
-          {
-            "criterion": "Simplicity",
-            "description": "Is the number of items appropriate (not overwhelming)?",
-            "maxPoints": 5
-          }
-        ]
-      }
-    },
-    {
-      "section": "Social Proof Section",
-      "customizableElements": [
-        "Heading",
-        "Company logos"
-      ],
-      "rubric": {
-        "heading": [
-          {
-            "criterion": "Clarity",
-            "description": "Does it effectively introduce the social proof?",
-            "maxPoints": 5
-          },
-          {
-            "criterion": "Relevance",
-            "description": "Does it emphasize trust and credibility?",
-            "maxPoints": 5
-          }
-        ],
-        "companyLogos": [
-          {
-            "criterion": "Relevance",
-            "description": "Are the companies well-known and respected in the industry?",
-            "maxPoints": 5
-          },
-          {
-            "criterion": "Visibility",
-            "description": "Are the logos clear and recognizable?",
-            "maxPoints": 5
-          },
-          {
-            "criterion": "Quantity",
-            "description": "Is there an appropriate number of logos (not too few, not overwhelming)?",
-            "maxPoints": 5
-          }
-        ]
-      }
-    },
-    {
-      "section": "Features/Benefits Section",
-      "customizableElements": [
-        "Section heading",
-        "Feature/benefit cards (icon, title, description)"
-      ],
-      "rubric": {
-        "sectionHeading": [
-          {
-            "criterion": "Clarity",
-            "description": "Does it effectively introduce the benefits?",
-            "maxPoints": 5
-          },
-          {
-            "criterion": "Benefit-focused",
-            "description": "Does it emphasize value to the user?",
-            "maxPoints": 5
-          }
-        ],
-        "featureBenefitCards": [
-          {
-            "criterion": "Relevance",
-            "description": "Do the icons visually represent the benefits?",
-            "maxPoints": 5
-          },
-          {
-            "criterion": "Clarity",
-            "description": "Are the titles clear and benefit-driven?",
-            "maxPoints": 5
-          },
-          {
-            "criterion": "Value",
-            "description": "Do the descriptions focus on user benefits rather than features?",
-            "maxPoints": 5
-          },
-          {
-            "criterion": "Conciseness",
-            "description": "Are the descriptions brief and impactful?",
-            "maxPoints": 5
-          }
-        ]
-      }
-    },
-    {
-      "section": "Explainer Video Section",
-      "customizableElements": [
-        "Section heading",
-        "Video content"
-      ],
-      "rubric": {
-        "sectionHeading": [
-          {
-            "criterion": "Clarity",
-            "description": "Does it effectively introduce the video?",
-            "maxPoints": 5
-          },
-          {
-            "criterion": "Engagement",
-            "description": "Does it encourage viewers to watch?",
-            "maxPoints": 5
-          }
-        ],
-        "videoContent": [
-          {
-            "criterion": "Length",
-            "description": "Is it concise (2-3 minutes max)?",
-            "maxPoints": 5
-          },
-          {
-            "criterion": "Clarity",
-            "description": "Does it clearly explain how the product/service works?",
-            "maxPoints": 5
-          },
-          {
-            "criterion": "Engagement",
-            "description": "Is it visually appealing and well-produced?",
-            "maxPoints": 5
-          },
-          {
-            "criterion": "Call-to-action",
-            "description": "Does it include a clear next step for viewers?",
-            "maxPoints": 5
-          }
-        ]
-      }
-    },
-    {
-      "section": "How It Works Section",
-      "customizableElements": [
-        "Section heading",
-        "Step titles and descriptions"
-      ],
-      "rubric": {
-        "sectionHeading": [
-          {
-            "criterion": "Clarity",
-            "description": "Does it effectively introduce the process?",
-            "maxPoints": 5
-          },
-          {
-            "criterion": "Engagement",
-            "description": "Does it encourage users to learn more?",
-            "maxPoints": 5
-          }
-        ],
-        "steps": [
-          {
-            "criterion": "Clarity",
-            "description": "Are the step titles clear and action-oriented?",
-            "maxPoints": 5
-          },
-          {
-            "criterion": "Conciseness",
-            "description": "Are the descriptions brief and easy to understand?",
-            "maxPoints": 5
-          },
-          {
-            "criterion": "Completeness",
-            "description": "Do the steps cover the entire process?",
-            "maxPoints": 5
-          },
-          {
-            "criterion": "Quantity",
-            "description": "Is the number of steps appropriate (3-5 steps)?",
-            "maxPoints": 5
-          }
-        ]
-      }
-    },
-    {
-      "section": "Testimonials Section",
-      "customizableElements": [
-        "Section heading",
-        "Testimonial content (quote, name, role, image)"
-      ],
-      "rubric": {
-        "sectionHeading": [
-          {
-            "criterion": "Clarity",
-            "description": "Does it effectively introduce the testimonials?",
-            "maxPoints": 5
-          },
-          {
-            "criterion": "Engagement",
-            "description": "Does it emphasize the value of user experiences?",
-            "maxPoints": 5
-          }
-        ],
-        "testimonials": [
-          {
-            "criterion": "Relevance",
-            "description": "Do the quotes highlight key benefits or address common concerns?",
-            "maxPoints": 5
-          },
-          {
-            "criterion": "Credibility",
-            "description": "Are the names, roles, and images of testimonial givers included?",
-            "maxPoints": 5
-          },
-          {
-            "criterion": "Diversity",
-            "description": "Is there a good mix of different user types or use cases?",
-            "maxPoints": 5
-          },
-          {
-            "criterion": "Authenticity",
-            "description": "Do the testimonials sound genuine and specific?",
-            "maxPoints": 5
-          }
-        ]
-      }
-    },
-    {
-      "section": "FAQ Section",
-      "customizableElements": [
-        "Section heading",
-        "Question and answer pairs"
-      ],
-      "rubric": {
-        "sectionHeading": [
-          {
-            "criterion": "Clarity",
-            "description": "Does it effectively introduce the FAQ?",
-            "maxPoints": 5
-          },
-          {
-            "criterion": "Relevance",
-            "description": "Does it address the purpose of the section?",
-            "maxPoints": 5
-          }
-        ],
-        "questionsAndAnswers": [
-          {
-            "criterion": "Relevance",
-            "description": "Do the questions address common user concerns?",
-            "maxPoints": 5
-          },
-          {
-            "criterion": "Clarity",
-            "description": "Are the answers clear and concise?",
-            "maxPoints": 5
-          },
-          {
-            "criterion": "Completeness",
-            "description": "Do the FAQs cover a range of important topics?",
-            "maxPoints": 5
-          },
-          {
-            "criterion": "Actionability",
-            "description": "Do the answers guide users towards next steps when appropriate?",
-            "maxPoints": 5
-          }
-        ]
-      }
-    },
-    {
-      "section": "Sign-up Section",
-      "customizableElements": [
-        "Section heading",
-        "Subheading",
-        "Form fields",
-        "CTA button"
-      ],
-      "rubric": {
-        "sectionHeading": [
-          {
-            "criterion": "Clarity",
-            "description": "Does it clearly state the action required?",
-            "maxPoints": 5
-          },
-          {
-            "criterion": "Engagement",
-            "description": "Does it encourage sign-ups?",
-            "maxPoints": 5
-          }
-        ],
-        "subheading": [
-          {
-            "criterion": "Support",
-            "description": "Does it provide a compelling reason to sign up?",
-            "maxPoints": 5
-          },
-          {
-            "criterion": "Conciseness",
-            "description": "Is it brief and impactful?",
-            "maxPoints": 5
-          }
-        ],
-        "formFields": [
-          {
-            "criterion": "Simplicity",
-            "description": "Are only necessary fields included?",
-            "maxPoints": 5
-          },
-          {
-            "criterion": "Clarity",
-            "description": "Are field labels clear?",
-            "maxPoints": 5
-          }
-        ],
-        "ctaButton": [
-          {
-            "criterion": "Clarity",
-            "description": "Does the text clearly indicate the action?",
-            "maxPoints": 5
-          },
-          {
-            "criterion": "Design",
-            "description": "Is it prominently displayed and high-contrast?",
-            "maxPoints": 5
-          }
-        ]
-      }
-    },
-    {
-      "section": "Footer",
-      "customizableElements": [
-        "Company information",
-        "Quick links",
-        "Contact information",
-        "Social media links"
-      ],
-      "rubric": {
-        "companyInformation": [
-          {
-            "criterion": "Completeness",
-            "description": "Is essential information (copyright, privacy policy) included?",
-            "maxPoints": 5
-          },
-          {
-            "criterion": "Clarity",
-            "description": "Is the information clearly presented?",
-            "maxPoints": 5
-          }
-        ],
-        "quickLinks": [
-          {
-            "criterion": "Relevance",
-            "description": "Do they cover key sections of the site?",
-            "maxPoints": 5
-          },
-          {
-            "criterion": "Organization",
-            "description": "Are they logically grouped?",
-            "maxPoints": 5
-          }
-        ],
-        "contactInformation": [
-          {
-            "criterion": "Completeness",
-            "description": "Are multiple contact methods provided?",
-            "maxPoints": 5
-          },
-          {
-            "criterion": "Clarity",
-            "description": "Is the information easy to find and read?",
-            "maxPoints": 5
-          }
-        ],
-        "socialMediaLinks": [
-          {
-            "criterion": "Completeness",
-            "description": "Are all relevant platforms included?",
-            "maxPoints": 5
-          },
-          {
-            "criterion": "Design",
-            "description": "Are the icons clear and recognizable?",
-            "maxPoints": 5
-          }
-        ]
-      }
-    },
-    {
-      "section": "Scroll Indicator (Bouncing Ball)",
-      "customizableElements": [
-        "Emoji or icon used",
-        "Size of the indicator",
-        "Animation style"
-      ],
-      "rubric": {
-        "relevance": [
-          {
-            "criterion": "Theme Relation",
-            "description": "Does the chosen emoji or icon relate to the website's theme?",
-            "maxPoints": 5
-          },
-          {
-            "criterion": "Intuitiveness",
-            "description": "Is it intuitive as a scroll indicator?",
-            "maxPoints": 5
-          }
-        ],
-        "visibility": [
-          {
-            "criterion": "Size Appropriateness",
-            "description": "Is the size appropriate for easy visibility without being obtrusive?",
-            "maxPoints": 5
-          },
-          {
-            "criterion": "Contrast",
-            "description": "Does it contrast well with the background?",
-            "maxPoints": 5
-          }
-        ],
-        "animation": [
-          {
-            "criterion": "Smoothness",
-            "description": "Is the animation smooth and attention-grabbing?",
-            "maxPoints": 5
-          },
-          {
-            "criterion": "Effectiveness",
-            "description": "Does it effectively indicate the action to scroll?",
-            "maxPoints": 5
-          }
-        ],
-        "functionality": [
-          {
-            "criterion": "Disappearance",
-            "description": "Does it disappear appropriately when reaching the bottom of the page?",
-            "maxPoints": 5
-          },
-          {
-            "criterion": "Responsiveness",
-            "description": "Is it responsive across different screen sizes?",
-            "maxPoints": 5
-          }
-
+"landingPageRubric": [
+{
+"section": "Hero Section (Header)",
+"customizableElements": [
+"Background Image",
+"Heading",
+"Subheading",
+"CTA Button Text and Link"
+],
+"rubric": {
+"backgroundImage": [
+{
+"criterion": "Relevance",
+"description": "The extent to which the image relates to the product or service.",
+"levels": [
+{ "score": 1, "description": "Image is completely unrelated to the product/service." },
+{ "score": 2, "description": "Image has minimal relevance to the product/service." },
+{ "score": 3, "description": "Image is somewhat related but does not clearly represent the product/service." },
+{ "score": 4, "description": "Image is relevant and represents the product/service adequately." },
+{ "score": 5, "description": "Image is highly relevant and effectively enhances the understanding of the product/service." }
+]
+},
+{
+"criterion": "Quality",
+"description": "The visual appeal and resolution of the image.",
+"levels": [
+{ "score": 1, "description": "Image is low-resolution, pixelated, or unappealing." },
+{ "score": 2, "description": "Image quality is below average; lacks visual appeal." },
+{ "score": 3, "description": "Image is of acceptable quality but could be improved." },
+{ "score": 4, "description": "Image is high-resolution and visually appealing." },
+{ "score": 5, "description": "Image is exceptional in quality, enhancing overall visual appeal significantly." }
+]
+},
+{
+"criterion": "Contrast",
+"description": "The contrast between the image and text overlay for optimal readability.",
+"levels": [
+{ "score": 1, "description": "Poor contrast; text is unreadable against the background." },
+{ "score": 2, "description": "Contrast is inadequate; text is difficult to read." },
+{ "score": 3, "description": "Contrast is acceptable but could be improved for better readability." },
+{ "score": 4, "description": "Good contrast; text is clearly readable." },
+{ "score": 5, "description": "Excellent contrast; text stands out prominently, enhancing readability and user experience." }
+]
+}
+],
+"heading": [
+{
+"criterion": "Clarity",
+"description": "How clearly the heading communicates the unique selling proposition (USP).",
+"levels": [
+{ "score": 1, "description": "Heading is vague and does not convey the USP." },
+{ "score": 2, "description": "Heading provides limited information about the USP." },
+{ "score": 3, "description": "Heading somewhat communicates the USP but lacks precision." },
+{ "score": 4, "description": "Heading clearly states the USP." },
+{ "score": 5, "description": "Heading is exceptionally clear, effectively highlighting the USP in a compelling manner." }
+]
+},
+{
+"criterion": "Benefit-Driven",
+"description": "The degree to which the heading focuses on user benefits rather than features.",
+"levels": [
+{ "score": 1, "description": "Heading does not mention user benefits at all." },
+{ "score": 2, "description": "Heading mentions features with minimal emphasis on benefits." },
+{ "score": 3, "description": "Heading balances features and benefits without strong emphasis." },
+{ "score": 4, "description": "Heading highlights key user benefits effectively." },
+{ "score": 5, "description": "Heading is highly benefit-driven, strongly appealing to user needs and desires." }
+]
+},
+{
+"criterion": "Conciseness",
+"description": "The brevity and impact of the heading.",
+"levels": [
+{ "score": 1, "description": "Heading is overly long and lacks focus." },
+{ "score": 2, "description": "Heading is somewhat lengthy and could be more concise." },
+{ "score": 3, "description": "Heading is of average length but may lack impact." },
+{ "score": 4, "description": "Heading is concise and impactful." },
+{ "score": 5, "description": "Heading is exceptionally brief and delivers a powerful message." }
+]
+}
+],
+"subheading": [
+{
+"criterion": "Support",
+"description": "How effectively the subheading supports and enhances the main heading.",
+"levels": [
+{ "score": 1, "description": "Subheading is unrelated to the main heading." },
+{ "score": 2, "description": "Subheading provides minimal support to the main heading." },
+{ "score": 3, "description": "Subheading somewhat supports the main heading." },
+{ "score": 4, "description": "Subheading effectively reinforces the main heading." },
+{ "score": 5, "description": "Subheading strongly enhances and complements the main heading." }
+]
+},
+{
+"criterion": "Detail",
+"description": "Provision of additional relevant and valuable information.",
+"levels": [
+{ "score": 1, "description": "Subheading lacks additional information." },
+{ "score": 2, "description": "Subheading provides minimal additional details." },
+{ "score": 3, "description": "Subheading offers some relevant information." },
+{ "score": 4, "description": "Subheading provides valuable additional insights." },
+{ "score": 5, "description": "Subheading delivers critical information that significantly enhances understanding." }
+]
+},
+{
+"criterion": "Clarity",
+"description": "The ease with which the subheading can be understood.",
+"levels": [
+{ "score": 1, "description": "Subheading is confusing and unclear." },
+{ "score": 2, "description": "Subheading lacks clarity." },
+{ "score": 3, "description": "Subheading is somewhat clear but could be improved." },
+{ "score": 4, "description": "Subheading is clear and easy to understand." },
+{ "score": 5, "description": "Subheading is exceptionally clear and immediately comprehensible." }
+]
+}
+],
+"ctaButton": [
+{
+"criterion": "Visibility",
+"description": "Prominence and visual appeal of the CTA button.",
+"levels": [
+{ "score": 1, "description": "CTA button is barely noticeable or hidden." },
+{ "score": 2, "description": "CTA button lacks sufficient prominence." },
+{ "score": 3, "description": "CTA button is adequately visible." },
+{ "score": 4, "description": "CTA button is prominent and visually appealing." },
+{ "score": 5, "description": "CTA button stands out exceptionally, immediately drawing user attention." }
+]
+},
+{
+"criterion": "Action-Oriented",
+"description": "Clarity and effectiveness of the CTA text in prompting user action.",
+"levels": [
+{ "score": 1, "description": "CTA text is vague and does not prompt action." },
+{ "score": 2, "description": "CTA text provides minimal indication of the desired action." },
+{ "score": 3, "description": "CTA text suggests an action but lacks impact." },
+{ "score": 4, "description": "CTA text clearly indicates the next step." },
+{ "score": 5, "description": "CTA text is highly compelling and strongly motivates immediate action." }
+]
+},
+{
+"criterion": "Relevance",
+"description": "Alignment of the CTA with the heading and subheading.",
+"levels": [
+{ "score": 1, "description": "CTA is disconnected from the heading and subheading." },
+{ "score": 2, "description": "CTA has limited relevance to the heading and subheading." },
+{ "score": 3, "description": "CTA is somewhat aligned with the main messages." },
+{ "score": 4, "description": "CTA aligns well with the heading and subheading." },
+{ "score": 5, "description": "CTA is perfectly aligned, reinforcing the key messages effectively." }
+]
+}
+]
+}
+},
+{
+"section": "Navigation",
+"customizableElements": [
+"Logo/Brand Name",
+"Menu Items"
+],
+"rubric": {
+"logoBrandName": [
+{
+"criterion": "Visibility",
+"description": "Clarity and prominence of the logo or brand name.",
+"levels": [
+{ "score": 1, "description": "Logo/brand name is not visible or recognizable." },
+{ "score": 2, "description": "Logo/brand name is poorly visible or unclear." },
+{ "score": 3, "description": "Logo/brand name is somewhat visible but could be improved." },
+{ "score": 4, "description": "Logo/brand name is clear and easily recognizable." },
+{ "score": 5, "description": "Logo/brand name is highly prominent and instantly recognizable." }
+]
+},
+{
+"criterion": "Relevance",
+"description": "How well the logo or brand name reflects the brand identity.",
+"levels": [
+{ "score": 1, "description": "Logo/brand name does not reflect brand identity at all." },
+{ "score": 2, "description": "Logo/brand name minimally reflects brand identity." },
+{ "score": 3, "description": "Logo/brand name somewhat reflects brand identity." },
+{ "score": 4, "description": "Logo/brand name effectively reflects brand identity." },
+{ "score": 5, "description": "Logo/brand name perfectly embodies and communicates brand identity." }
+]
+}
+],
+"menuItems": [
+{
+"criterion": "Clarity",
+"description": "How clear and descriptive the menu labels are.",
+"levels": [
+{ "score": 1, "description": "Menu labels are confusing and not descriptive." },
+{ "score": 2, "description": "Menu labels lack clarity or are too vague." },
+{ "score": 3, "description": "Menu labels are acceptable but could be clearer." },
+{ "score": 4, "description": "Menu labels are clear and descriptive." },
+{ "score": 5, "description": "Menu labels are exceptionally clear, guiding users effectively." }
+]
+},
+{
+"criterion": "Relevance",
+"description": "Coverage of key sections and content areas of the landing page.",
+"levels": [
+{ "score": 1, "description": "Menu items do not cover important sections." },
+{ "score": 2, "description": "Menu items cover few key sections." },
+{ "score": 3, "description": "Menu items cover some key sections but miss others." },
+{ "score": 4, "description": "Menu items cover most key sections adequately." },
+{ "score": 5, "description": "Menu items comprehensively cover all essential sections." }
+]
+},
+{
+"criterion": "Simplicity",
+"description": "Appropriateness of the number of menu items to avoid overwhelming the user.",
+"levels": [
+{ "score": 1, "description": "Too many menu items, causing confusion." },
+{ "score": 2, "description": "Slightly too many menu items." },
+{ "score": 3, "description": "Acceptable number of menu items but could be streamlined." },
+{ "score": 4, "description": "Appropriate number of menu items, easy to navigate." },
+{ "score": 5, "description": "Optimal number of menu items, ensuring simplicity and ease of use." }
+]
+}
+]
+}
+},
+{
+"section": "Social Proof Section",
+"customizableElements": [
+"Heading",
+"Company Logos"
+],
+"rubric": {
+"heading": [
+{
+"criterion": "Clarity",
+"description": "Effectiveness in introducing the social proof section.",
+"levels": [
+{ "score": 1, "description": "Heading is unclear and does not introduce social proof." },
+{ "score": 2, "description": "Heading provides minimal context for social proof." },
+{ "score": 3, "description": "Heading is somewhat clear but could be more effective." },
+{ "score": 4, "description": "Heading clearly introduces the social proof section." },
+{ "score": 5, "description": "Heading is exceptionally clear and compelling in introducing social proof." }
+]
+},
+{
+"criterion": "Relevance",
+"description": "Emphasis on trust and credibility in the heading.",
+"levels": [
+{ "score": 1, "description": "Heading does not emphasize trust or credibility." },
+{ "score": 2, "description": "Heading minimally emphasizes trust or credibility." },
+{ "score": 3, "description": "Heading somewhat emphasizes trust and credibility." },
+{ "score": 4, "description": "Heading effectively emphasizes trust and credibility." },
+{ "score": 5, "description": "Heading strongly emphasizes trust and credibility, enhancing user confidence." }
+]
+}
+],
+"companyLogos": [
+{
+"criterion": "Relevance",
+"description": "Use of well-known and respected companies in the industry.",
+"levels": [
+{ "score": 1, "description": "Logos are from unknown or irrelevant companies." },
+{ "score": 2, "description": "Logos are from companies with minimal recognition." },
+{ "score": 3, "description": "Logos are somewhat recognized but not industry leaders." },
+{ "score": 4, "description": "Logos are from well-known and respected companies." },
+{ "score": 5, "description": "Logos are from highly reputable, industry-leading companies, enhancing credibility significantly." }
+]
+},
+{
+"criterion": "Visibility",
+"description": "Clarity and recognizability of the company logos.",
+"levels": [
+{ "score": 1, "description": "Logos are unclear or distorted." },
+{ "score": 2, "description": "Logos are somewhat recognizable but of poor quality." },
+{ "score": 3, "description": "Logos are acceptable but could be clearer." },
+{ "score": 4, "description": "Logos are clear and easily recognizable." },
+{ "score": 5, "description": "Logos are highly clear, high-resolution, and immediately recognizable." }
+]
+},
+{
+"criterion": "Quantity",
+"description": "Appropriateness of the number of logos displayed.",
+"levels": [
+{ "score": 1, "description": "Too few or too many logos, causing imbalance." },
+{ "score": 2, "description": "Number of logos is slightly inappropriate." },
+{ "score": 3, "description": "Acceptable number of logos but could be optimized." },
+{ "score": 4, "description": "Appropriate number of logos, balanced presentation." },
+{ "score": 5, "description": "Optimal number of logos, enhancing credibility without overwhelming the user." }
+]
+}
+]
+}
+},
+{
+"section": "Features/Benefits Section",
+"customizableElements": [
+"Section Heading",
+"Feature/Benefit Cards (Icon, Title, Description)"
+],
+"rubric": {
+"sectionHeading": [
+{
+"criterion": "Clarity",
+"description": "Effectiveness in introducing the benefits to the user.",
+"levels": [
+{ "score": 1, "description": "Heading is unclear and does not introduce benefits." },
+{ "score": 2, "description": "Heading provides minimal context about benefits." },
+{ "score": 3, "description": "Heading is somewhat clear but lacks impact." },
+{ "score": 4, "description": "Heading clearly introduces the benefits." },
+{ "score": 5, "description": "Heading is exceptionally clear and compelling, highlighting the benefits effectively." }
+]
+},
+{
+"criterion": "Benefit-Focused",
+"description": "Emphasis on the value to the user in the heading.",
+"levels": [
+{ "score": 1, "description": "Heading does not emphasize user value." },
+{ "score": 2, "description": "Heading minimally emphasizes user value." },
+{ "score": 3, "description": "Heading somewhat emphasizes user value." },
+{ "score": 4, "description": "Heading effectively emphasizes the value to the user." },
+{ "score": 5, "description": "Heading strongly emphasizes user value, making it highly compelling." }
+]
+}
+],
+"featureBenefitCards": [
+{
+"criterion": "Relevance",
+"description": "Visual representation of benefits through icons.",
+"levels": [
+{ "score": 1, "description": "Icons are irrelevant to the benefits." },
+{ "score": 2, "description": "Icons have minimal relevance to the benefits." },
+{ "score": 3, "description": "Icons somewhat represent the benefits." },
+{ "score": 4, "description": "Icons effectively represent the benefits." },
+{ "score": 5, "description": "Icons are highly relevant, enhancing understanding of the benefits." }
+]
+},
+{
+"criterion": "Clarity",
+"description": "How clear and benefit-driven the titles are.",
+"levels": [
+{ "score": 1, "description": "Titles are unclear and not benefit-driven." },
+{ "score": 2, "description": "Titles are somewhat unclear or focus on features." },
+{ "score": 3, "description": "Titles are acceptable but could emphasize benefits more." },
+{ "score": 4, "description": "Titles are clear and highlight benefits." },
+{ "score": 5, "description": "Titles are exceptionally clear and strongly emphasize benefits." }
+]
+},
+{
+"criterion": "Value",
+"description": "Focus on user benefits in the descriptions rather than just features.",
+"levels": [
+{ "score": 1, "description": "Descriptions focus solely on features, ignoring benefits." },
+{ "score": 2, "description": "Descriptions minimally address benefits." },
+{ "score": 3, "description": "Descriptions balance features and benefits." },
+{ "score": 4, "description": "Descriptions focus on benefits effectively." },
+{ "score": 5, "description": "Descriptions are highly benefit-focused, clearly conveying user value." }
+]
+},
+{
+"criterion": "Conciseness",
+"description": "Brevity and impactfulness of the descriptions.",
+"levels": [
+{ "score": 1, "description": "Descriptions are lengthy and lack focus." },
+{ "score": 2, "description": "Descriptions are somewhat long and could be more concise." },
+{ "score": 3, "description": "Descriptions are acceptable but may lack impact." },
+{ "score": 4, "description": "Descriptions are concise and impactful." },
+{ "score": 5, "description": "Descriptions are exceptionally brief and deliver a powerful message." }
+]
+}
+]
+}
+},
+{
+"section": "Testimonials Section",
+"customizableElements": [
+"Section Heading",
+"Testimonial Content (Quote, Name, Role, Image)"
+],
+"rubric": {
+"sectionHeading": [
+{
+"criterion": "Clarity",
+"description": "Effectiveness in introducing the testimonials.",
+"levels": [
+{ "score": 1, "description": "Heading is unclear and does not introduce testimonials." },
+{ "score": 2, "description": "Heading provides minimal context for testimonials." },
+{ "score": 3, "description": "Heading is somewhat clear but lacks impact." },
+{ "score": 4, "description": "Heading clearly introduces the testimonials." },
+{ "score": 5, "description": "Heading is exceptionally clear and compelling, encouraging users to read testimonials." }
+]
+},
+{
+"criterion": "Engagement",
+"description": "Emphasis on the value of user experiences.",
+"levels": [
+{ "score": 1, "description": "Heading does not emphasize user experiences." },
+{ "score": 2, "description": "Heading minimally highlights user experiences." },
+{ "score": 3, "description": "Heading somewhat emphasizes user experiences." },
+{ "score": 4, "description": "Heading effectively emphasizes the value of user experiences." },
+{ "score": 5, "description": "Heading strongly emphasizes user experiences, enhancing engagement." }
+]
+}
+],
+"testimonials": [
+{
+"criterion": "Relevance",
+"description": "How well the quotes highlight key benefits or address common concerns.",
+"levels": [
+{ "score": 1, "description": "Testimonials are irrelevant or off-topic." },
+{ "score": 2, "description": "Testimonials have minimal relevance to key benefits or concerns." },
+{ "score": 3, "description": "Testimonials are somewhat relevant." },
+{ "score": 4, "description": "Testimonials effectively highlight key benefits or address concerns." },
+{ "score": 5, "description": "Testimonials are highly relevant, directly addressing user needs and concerns." }
+]
+},
+{
+"criterion": "Credibility",
+"description": "Inclusion of names, roles, and images to enhance authenticity.",
+"levels": [
+{ "score": 1, "description": "Testimonials lack names, roles, and images." },
+{ "score": 2, "description": "Testimonials include minimal identifying information." },
+{ "score": 3, "description": "Testimonials include some identifying information." },
+{ "score": 4, "description": "Testimonials include names, roles, and images." },
+{ "score": 5, "description": "Testimonials provide full details, enhancing credibility significantly." }
+]
+},
+{
+"criterion": "Diversity",
+"description": "Variety of user types or use cases represented in testimonials.",
+"levels": [
+{ "score": 1, "description": "Testimonials lack diversity, representing a single perspective." },
+{ "score": 2, "description": "Testimonials show minimal diversity." },
+{ "score": 3, "description": "Testimonials have some diversity." },
+{ "score": 4, "description": "Testimonials represent a good mix of user types." },
+{ "score": 5, "description": "Testimonials are highly diverse, covering multiple user types and use cases." }
+]
+},
+{
+"criterion": "Authenticity",
+"description": "Genuineness and specificity of the testimonials.",
+"levels": [
+{ "score": 1, "description": "Testimonials sound fake or generic." },
+{ "score": 2, "description": "Testimonials are somewhat generic and lack specifics." },
+{ "score": 3, "description": "Testimonials are acceptable but could be more authentic." },
+{ "score": 4, "description": "Testimonials sound genuine and provide specifics." },
+{ "score": 5, "description": "Testimonials are highly authentic, with detailed and specific experiences." }
+]
+}
+]
+}
 [[template]]
 <!DOCTYPE html>
 <html lang="en">
@@ -607,7 +507,7 @@ Provide recommendations for GDPR compliance, cookie policies, and accessibility 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Somedai.club - Accelerate Your AI Innovation</title>
+    <title>[Your Brand] - [Your Tagline]</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.2/dist/tailwind.min.css" rel="stylesheet">
     <style>
@@ -627,7 +527,7 @@ Provide recommendations for GDPR compliance, cookie policies, and accessibility 
         }
 
         .hero-background {
-            background: url('https://cdn.glitch.global/6966ec4e-7e8a-4b66-a5f9-1a0f3cd5269c/hero?v=1723398806028') no-repeat center center;
+            background: url('https://via.placeholder.com/1500x800') no-repeat center center;
             background-size: cover;
             height: 110vh;
             display: flex;
@@ -705,6 +605,9 @@ Provide recommendations for GDPR compliance, cookie policies, and accessibility 
         .logo {
             flex: 1;
             text-align: left;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
         }
 
         .service-icon,
@@ -779,8 +682,8 @@ Provide recommendations for GDPR compliance, cookie policies, and accessibility 
     <nav class="bg-white py-4 shadow-md sticky top-0 z-50">
         <div class="container mx-auto flex justify-between items-center px-4">
             <div class="logo">
-                <!-- <a href="#"><img src="logo.png" alt="Somedai.club" class="h-8"></a> -->
-                Somedai.club
+                <!-- Replace with your logo or brand name -->
+                [Your Brand]
             </div>
             <ul class="desktop-menu flex space-x-4">
                 <li><a href="#services">Services</a></li>
@@ -790,8 +693,10 @@ Provide recommendations for GDPR compliance, cookie policies, and accessibility 
             </ul>
             <div class="mobile-menu">
                 <button id="menu-toggle" class="text-blue-500">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16m-7 6h7"></path>
                     </svg>
                 </button>
             </div>
@@ -807,110 +712,121 @@ Provide recommendations for GDPR compliance, cookie policies, and accessibility 
     <!-- Hero Section -->
     <header class="hero-background">
         <div>
-            <h1 class="text-4xl md:text-6xl text-shadow-strong">Accelerate Your AI Innovation</h1>
-            <p class="text-xl md:text-2xl">Unlock the power of AI with our expert consulting services.</p>
-            <a href="#signup" class="cta-button mt-4">Start Your AI Journey</a>
+            <h1 class="text-4xl md:text-6xl text-shadow-strong">[Your Main Heading]</h1>
+            <p class="text-xl md:text-2xl">[Your Subheading or Tagline]</p>
+            <a href="#signup" class="cta-button mt-4">[Call to Action]</a>
         </div>
     </header>
 
-    <!-- Industry Leaders Section -->
+    <!-- Trusted By Section -->
     <section class="container mx-auto my-12 p-6">
-        <h2 class="text-3xl font-bold text-center mb-8">Trusted by Industry Leaders</h2>
+        <h2 class="text-3xl font-bold text-center mb-8">Trusted by [Your Clients/Partners]</h2>
         <div class="flex justify-center space-x-8">
-            <img src="logo1.png" alt="Company 1" class="trusted-logo">
-            <img src="logo2.png" alt="Company 2" class="trusted-logo">
-            <img src="logo3.png" alt="Company 3" class="trusted-logo">
-            <img src="logo4.png" alt="Company 4" class="trusted-logo">
+            <!-- Replace with your client logos -->
+            <img src="https://via.placeholder.com/120x60" alt="Client 1" class="trusted-logo">
+            <img src="https://via.placeholder.com/120x60" alt="Client 2" class="trusted-logo">
+            <img src="https://via.placeholder.com/120x60" alt="Client 3" class="trusted-logo">
+            <img src="https://via.placeholder.com/120x60" alt="Client 4" class="trusted-logo">
         </div>
     </section>
 
-    <!-- Somedai.club Story -->
+    <!-- About Section -->
     <section id="introduction" class="container mx-auto my-12 p-6 flex flex-col md:flex-row items-center">
         <div class="md:w-1/2">
-            <h2 class="text-3xl font-bold mb-4">The Somedai.club Story</h2>
+            <h2 class="text-3xl font-bold mb-4">About [Your Brand]</h2>
             <p class="text-lg leading-relaxed">
-                Somedai.club is a subsidiary of Sunday.club, a global leader in AI innovation. Our mission is to help businesses of all sizes accelerate their AI journeys by offering expert consulting services tailored to their unique needs. As part of the Sunday.club family, we leverage our parent company’s vast experience and resources to deliver cutting-edge AI solutions that drive success.
+                [Your brand's mission statement, story, or description. Explain what you do and why it matters.]
             </p>
         </div>
         <div class="md:w-1/2 md:ml-8 mt-8 md:mt-0">
-            <img src="somedai-club-story.jpg" alt="Somedai.club Story" class="rounded-lg shadow-lg">
+            <img src="https://via.placeholder.com/600x400" alt="About Image" class="rounded-lg shadow-lg">
         </div>
     </section>
 
     <!-- Services Section -->
     <section id="services" class="container mx-auto my-12 p-6">
-        <h2 class="text-3xl font-bold text-center mb-8">Our AI-Powered Services</h2>
+        <h2 class="text-3xl font-bold text-center mb-8">Our Services</h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Service 1 -->
             <div class="bg-white rounded-lg shadow-lg p-6 text-center">
-                <div class="service-icon">🚀</div>
-                <h3 class="text-xl font-bold">AI Workshops</h3>
-                <p>Interactive sessions designed to upskill your team in cutting-edge AI technologies.</p>
+                <div class="service-icon">✨</div>
+                <h3 class="text-xl font-bold">[Service 1 Title]</h3>
+                <p>[Brief description of Service 1.]</p>
             </div>
+            <!-- Service 2 -->
             <div class="bg-white rounded-lg shadow-lg p-6 text-center">
-                <div class="service-icon">💡</div>
-                <h3 class="text-xl font-bold">AI Hackathons</h3>
-                <p>Accelerate innovation with our AI-driven hackathons, resulting in ready-to-use prototypes.</p>
+                <div class="service-icon">🔧</div>
+                <h3 class="text-xl font-bold">[Service 2 Title]</h3>
+                <p>[Brief description of Service 2.]</p>
             </div>
+            <!-- Service 3 -->
             <div class="bg-white rounded-lg shadow-lg p-6 text-center">
-                <div class="service-icon">📊</div>
-                <h3 class="text-xl font-bold">AI Strategy Consulting</h3>
-                <p>Gain deep insights into the AI landscape and make informed decisions to drive your business forward.</p>
+                <div class="service-icon">📈</div>
+                <h3 class="text-xl font-bold">[Service 3 Title]</h3>
+                <p>[Brief description of Service 3.]</p>
             </div>
         </div>
     </section>
 
-    <!-- Proven Process Section -->
+    <!-- Process Section -->
     <section id="process" class="container mx-auto my-12 p-6">
-        <h2 class="text-3xl font-bold text-center mb-8">Our Proven Process</h2>
+        <h2 class="text-3xl font-bold text-center mb-8">Our Process</h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Step 1 -->
             <div class="process-step">
-                <div class="process-icon">💬</div>
-                <h3 class="text-xl font-bold">1. Consultation</h3>
-                <p>We start by understanding your unique needs and objectives.</p>
+                <div class="process-icon">📝</div>
+                <h3 class="text-xl font-bold">1. [Step 1 Title]</h3>
+                <p>[Description for Step 1.]</p>
             </div>
+            <!-- Step 2 -->
             <div class="process-step">
-                <div class="process-icon">🎯</div>
-                <h3 class="text-xl font-bold">2. Solution Design</h3>
-                <p>Our experts craft tailored AI solutions to meet your specific goals and challenges.</p>
+                <div class="process-icon">🔍</div>
+                <h3 class="text-xl font-bold">2. [Step 2 Title]</h3>
+                <p>[Description for Step 2.]</p>
             </div>
+            <!-- Step 3 -->
             <div class="process-step">
                 <div class="process-icon">🚀</div>
-                <h3 class="text-xl font-bold">3. Implementation</h3>
-                <p>We implement solutions rapidly, providing ongoing support and insights.</p>
+                <h3 class="text-xl font-bold">3. [Step 3 Title]</h3>
+                <p>[Description for Step 3.]</p>
             </div>
         </div>
     </section>
 
-    <!-- How We Help Entities Section -->
+    <!-- Clients/Entities Section -->
     <section id="clients" class="container mx-auto my-12 p-6">
-        <h2 class="text-3xl font-bold text-center mb-8">How We Empower Different Entities</h2>
+        <h2 class="text-3xl font-bold text-center mb-8">Who We Serve</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Client Type 1 -->
             <div class="bg-white p-6 rounded-lg shadow-lg flex items-start">
                 <div class="entity-icon mr-4">🏢</div>
                 <div>
-                    <h3 class="text-xl font-bold mb-4">Corporations</h3>
-                    <p>We work with large corporations to integrate AI solutions that enhance operational efficiency, drive innovation, and unlock new revenue streams. Our AI consulting services are tailored to address the specific challenges faced by large enterprises, including data management, predictive analytics, and process automation.</p>
+                    <h3 class="text-xl font-bold mb-4">[Client Type 1]</h3>
+                    <p>[Description of how you serve Client Type 1.]</p>
                 </div>
             </div>
+            <!-- Client Type 2 -->
             <div class="bg-white p-6 rounded-lg shadow-lg flex items-start">
                 <div class="entity-icon mr-4">🚀</div>
                 <div>
-                    <h3 class="text-xl font-bold mb-4">Startups</h3>
-                    <p>For startups, we provide the tools and expertise needed to leverage AI from the ground up. Whether you're looking to develop a new product, optimize your operations, or enter new markets, our services are designed to help you stay agile, innovative, and competitive in a fast-paced environment.</p>
+                    <h3 class="text-xl font-bold mb-4">[Client Type 2]</h3>
+                    <p>[Description of how you serve Client Type 2.]</p>
                 </div>
             </div>
+            <!-- Client Type 3 -->
             <div class="bg-white p-6 rounded-lg shadow-lg flex items-start">
                 <div class="entity-icon mr-4">🏛️</div>
                 <div>
-                    <h3 class="text-xl font-bold mb-4">Government & Public Sector</h3>
-                    <p>We collaborate with government agencies and public sector organizations to harness the power of AI for public good. Our solutions address a wide range of needs, from improving public services to enhancing decision-making processes and ensuring data-driven governance.</p>
+                    <h3 class="text-xl font-bold mb-4">[Client Type 3]</h3>
+                    <p>[Description of how you serve Client Type 3.]</p>
                 </div>
             </div>
+            <!-- Client Type 4 -->
             <div class="bg-white p-6 rounded-lg shadow-lg flex items-start">
                 <div class="entity-icon mr-4">🌍</div>
                 <div>
-                    <h3 class="text-xl font-bold mb-4">Nonprofits</h3>
-                    <p>Nonprofit organizations can benefit from our AI consulting services to maximize their impact. We help nonprofits utilize AI to better understand their data, optimize their operations, and reach more people with their services, all while staying true to their mission.</p>
+                    <h3 class="text-xl font-bold mb-4">[Client Type 4]</h3>
+                    <p>[Description of how you serve Client Type 4.]</p>
                 </div>
             </div>
         </div>
@@ -920,28 +836,31 @@ Provide recommendations for GDPR compliance, cookie policies, and accessibility 
     <section id="testimonials" class="container mx-auto my-12 p-6">
         <h2 class="text-3xl font-bold text-center mb-8">What Our Clients Say</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Testimonial 1 -->
             <div class="bg-white p-6 rounded-lg shadow-lg text-center">
-                <img src="alex-johnson.jpg" alt="Alex Johnson" class="client-image mx-auto mb-4">
-                <p class="italic mb-4">"Somedai.club's rapid prototyping helped us bring an AI solution to market in record time."</p>
-                <p class="font-bold">Alex Johnson, CEO of InnovateTech</p>
+                <img src="https://via.placeholder.com/100" alt="Client 1" class="client-image mx-auto mb-4">
+                <p class="italic mb-4">"[Client 1's testimonial goes here.]”</p>
+                <p class="font-bold">[Client 1's Name], [Client 1's Position]</p>
             </div>
+            <!-- Testimonial 2 -->
             <div class="bg-white p-6 rounded-lg shadow-lg text-center">
-                <img src="maria-garcia.jpg" alt="Maria Garcia" class="client-image mx-auto mb-4">
-                <p class="italic mb-4">"The AI workshops provided by Somedai.club transformed our approach to technology."</p>
-                <p class="font-bold">Maria Garcia, Head of Strategy, FutureCorp</p>
+                <img src="https://via.placeholder.com/100" alt="Client 2" class="client-image mx-auto mb-4">
+                <p class="italic mb-4">"[Client 2's testimonial goes here.]”</p>
+                <p class="font-bold">[Client 2's Name], [Client 2's Position]</p>
             </div>
+            <!-- Add more testimonials as needed -->
         </div>
     </section>
 
     <!-- Sign-up Section -->
     <section id="signup" class="text-center py-12 bg-blue-100">
-        <h2 class="text-3xl font-bold mb-4">Get Started with Somedai.club</h2>
-        <p class="text-gray-600 mb-8">Contact us today to explore how we can help your organization innovate with AI.</p>
-        <form action="https://landing-page-generator-tau.vercel.app/api/v1/subscribe" method="post" class="max-w-md mx-auto px-4">
-            <input type="email" name="email" placeholder="Enter your email" class="w-full px-4 py-2 mb-4 border rounded">
+        <h2 class="text-3xl font-bold mb-4">Get Started with [Your Brand]</h2>
+        <p class="text-gray-600 mb-8">[A brief call to action encouraging users to sign up or contact you.]</p>
+        <form action="https://your-form-handler.com/subscribe" method="post" class="max-w-md mx-auto px-4">
+            <input type="email" name="email" placeholder="Enter your email" class="w-full px-4 py-2 mb-4 border rounded" required>
             <input type="hidden" id="pageUrlField" name="page_url" value="">
             <script>
-              document.getElementById("pageUrlField").value = window.location.href;
+                document.getElementById("pageUrlField").value = window.location.href;
             </script>
             <button type="submit" class="w-full px-6 py-3 bg-blue-500 text-white rounded-full hover:bg-blue-600 transition duration-300">Get Started</button>
         </form>
@@ -950,7 +869,7 @@ Provide recommendations for GDPR compliance, cookie policies, and accessibility 
     <!-- Footer -->
     <footer class="bg-gray-800 text-white py-8">
         <div class="container mx-auto text-center">
-            <p>&copy; 2024 Somedai.club. All rights reserved.</p>
+            <p>&copy; 2024 [Your Brand]. All rights reserved.</p>
             <!--
             <div class="footer-links mt-4">
                 <a href="#">Privacy Policy</a>
@@ -958,15 +877,26 @@ Provide recommendations for GDPR compliance, cookie policies, and accessibility 
                 <a href="#">FAQ</a>
             </div>
             -->
-            <p>Made with <a href="https://landing-page-generator-tau.vercel.app" target="_blank">LPG</a>.</p>
+            <p>Made with <a href="https://landing-page-generator-tau.vercel.app" target="_blank" class="text-blue-400">LPG</a>.</p>
         </div>
     </footer>
 
+    <!-- Optional Sticky CTA -->
     <!--
-    <div class="sticky-cta">
+    <div class="sticky-cta fixed bottom-4 right-4">
         <a href="#signup" class="px-6 py-3 bg-blue-500 text-white rounded-full hover:bg-blue-600 transition duration-300">Get Started</a>
     </div>
     -->
+
+    <!-- Mobile Menu Toggle Script -->
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu-items');
+
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
 </body>
 
 </html>
