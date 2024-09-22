@@ -26,21 +26,17 @@
             font-size: 14px;
         }
 
-        #inputString {
-            width: 60%;
-            min-height: 50px;
-            resize: vertical;
-            overflow: hidden;
-            margin-bottom: 10px;
-            padding: 5px;
-        }
-
-        #inputUrl {
+        #inputString, #inputUrl, #inputEmail {
             width: 60%;
             resize: none;
             overflow: hidden;
             margin-bottom: 10px;
             padding: 5px;
+        }
+
+        #inputString {
+            min-height: 50px;
+            resize: vertical;
         }
 
         #response {
@@ -67,6 +63,8 @@
     <textarea id="inputString" placeholder="Enter your idea" rows="1"></textarea>
     <!-- Input field for existing landing page URL -->
     <input type="url" id="inputUrl" placeholder="Enter existing landing page URL (optional)">
+    <!-- Input field for user email -->
+    <input type="email" id="inputEmail" placeholder="Enter your email for signup notifications (optional)">
     <button id="generateButton" onclick="sendRequest()">Generate</button>
 
     <!-- Display the response here -->
@@ -125,12 +123,13 @@
             // Get the input values
             const input = document.getElementById('inputString').value;
             const existingUrl = document.getElementById('inputUrl').value;
+            const userEmail = document.getElementById('inputEmail').value;
             const button = document.getElementById('generateButton');
 
             button.disabled = true;
 
             // Prepare the data to be sent
-            let data = { idea: input };
+            let data = { idea: input, email: userEmail };
 
             // If existingUrl is provided, fetch its content
             if (existingUrl) {
