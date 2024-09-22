@@ -44,7 +44,7 @@ async def subscribe_email(request: Request):
         if result.data:
             author_email = result.data[0]['author_email']
             # Send email to author about new signup
-            subject = "New Lead Signup"
+            subject = "[LPG] New Lead Signup"
             message_html = f"A new lead has signed up for your landing page: {page_url}<br><br>Lead's email: {lead_email}"
             send_email(author_email, subject, message_html)
 
