@@ -11,7 +11,32 @@ from github import Auth
 from pathlib import Path
 from dotenv import load_dotenv
 
+import smtplib
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
+
 _ = load_dotenv(Path(__file__).parent / '.env')
+
+def send_email(to_email: str, subject: str, message: str):
+    smtp_server = "smtp.gmail.com"
+    smtp_port = 587
+    sender_email = os.getenv("SENDER_EMAIL")
+    sender_password = os.getenv("SENDER_PASSWORD")
+
+    message = MIMEMultipart()
+    message["From"] = sender_email
+    message["To"] = to_email
+    message["Subject"] = subject
+
+    body = message
+    message.attach(MIMEText(body, "html"))
+
+    with smtplib.SMTP(smtp_server, smtp_port) as server:
+        server.ehlo()
+        server.starttls()
+        server.ehlo()
+        server.login(sender_email, sender_password)
+        server.send_message(message)
 
 
 def generate_landing(idea: str, existing_page: str) -> str:
