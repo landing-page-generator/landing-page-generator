@@ -7,8 +7,6 @@ Do not add new IMG tags.
 [[CONCEPT]]
 
 
-[[my previous landing page as an example]]
-
 [[EXISTING-PAGE]]
 
 

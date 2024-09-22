@@ -53,7 +53,11 @@ def generate_landing(idea: str, existing_page: str) -> str:
     # llm = ChatGoogleGenerativeAI(model=gemini_model, api_key=gemini_api_key, temperature=0.6)
     print('AI model:', gemini_model)
 
-    existing_page = existing_page or 'No existing page'
+    if existing_page:
+        existing_page = '[[my previous landing page as an example]]\n\n' + existing_page + '\n\n'
+    else:
+        existing_page = ''
+
     prompt = Path('prompts/master1-01-instructions.txt').read_text().replace('[[CONCEPT]]', idea).replace('[[EXISTING-PAGE]]', existing_page)
     prompt += Path('prompts/master1-02-rubric.txt').read_text()
     prompt += Path('prompts/master1-03-template.txt').read_text()
