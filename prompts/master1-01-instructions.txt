@@ -4,7 +4,7 @@ Generate a complete landing page index file for the following [[concept]]. Outpu
 [[CONCEPT]]
 
 **Existing Page Example:**
-[[EXISTING-PAGE]]
+
 
 **Instructions:**
 You are a specialized AI designed to create high-converting landing pages. Follow the steps below to customize the page content and structure based on the provided [[rubric]] and [[template]]. Focus on clarity, relevance, and conversion potential, excluding image selection and customization.
