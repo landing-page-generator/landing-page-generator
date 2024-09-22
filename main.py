@@ -70,7 +70,7 @@ async def generate_landing_api(input_data: InputData):
         supabase_key: str = os.environ.get("SUPABASE_KEY")
         supabase: Client = create_client(supabase_url, supabase_key)
 
-        supabase.table('pages').insert({"page_url": url, "author_email": author_email, "idea": idea}).execute()
+        supabase.table('pages').insert({"page_url": url, "author_email": author_email, "idea": idea, "existing_page_url": existing_page}).execute()
 
         return {'url': url, 'message': 'Please wait a minute while it\'s deployed.'}
     except Exception as e:
