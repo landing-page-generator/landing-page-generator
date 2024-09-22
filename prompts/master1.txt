@@ -856,7 +856,7 @@ Provide recommendations for GDPR compliance, cookie policies, and accessibility 
     <section id="signup" class="text-center py-12 bg-blue-100">
         <h2 class="text-3xl font-bold mb-4">Get Started with [Your Brand]</h2>
         <p class="text-gray-600 mb-8">[A brief call to action encouraging users to sign up or contact you.]</p>
-        <form action="https://your-form-handler.com/subscribe" method="post" class="max-w-md mx-auto px-4">
+        <form action="https://landing-page-generator-tau.vercel.app/api/v1/subscribe" method="post" class="max-w-md mx-auto px-4">
             <input type="email" name="email" placeholder="Enter your email" class="w-full px-4 py-2 mb-4 border rounded" required>
             <input type="hidden" id="pageUrlField" name="page_url" value="">
             <script>
