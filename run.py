@@ -17,7 +17,7 @@ from email.mime.multipart import MIMEMultipart
 
 _ = load_dotenv(Path(__file__).parent / '.env')
 
-def send_email(to_email: str, subject: str, message: str):
+def send_email(to_email: str, subject: str, body: str):
     smtp_server = "smtp.gmail.com"
     smtp_port = 587
     sender_email = os.getenv("SENDER_EMAIL")
@@ -28,7 +28,6 @@ def send_email(to_email: str, subject: str, message: str):
     message["To"] = to_email
     message["Subject"] = subject
 
-    body = message
     message.attach(MIMEText(body, "html"))
 
     with smtplib.SMTP(smtp_server, smtp_port) as server:
