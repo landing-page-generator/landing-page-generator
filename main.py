@@ -45,8 +45,8 @@ async def subscribe_email(request: Request):
             author_email = result.data[0]['author_email']
             # Send email to author about new signup
             subject = "New Lead Signup"
-            message = f"A new lead has signed up for your landing page: {page_url}\nLead's email: {lead_email}"
-            send_email(author_email, subject, message)
+            message_html = f"A new lead has signed up for your landing page: {page_url}<br><br>Lead's email: {lead_email}"
+            send_email(author_email, subject, message_html)
 
         return HTMLResponse("<html><body><h1>Subscription successful</h1></body></html>")
     except Exception as e:
