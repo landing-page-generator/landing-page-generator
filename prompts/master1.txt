@@ -1,5 +1,6 @@
 Generate a complete landing page index file for the following [[concept]].
 Output ONLY html, without markdown or other formats.
+Do not add new IMG tags.
 
 [[concept]]
 
@@ -778,7 +779,8 @@ Provide recommendations for GDPR compliance, cookie policies, and accessibility 
     <nav class="bg-white py-4 shadow-md sticky top-0 z-50">
         <div class="container mx-auto flex justify-between items-center px-4">
             <div class="logo">
-                <a href="#"><img src="logo.png" alt="Somedai.club" class="h-8"></a>
+                <!-- <a href="#"><img src="logo.png" alt="Somedai.club" class="h-8"></a> -->
+                Somedai.club
             </div>
             <ul class="desktop-menu flex space-x-4">
                 <li><a href="#services">Services</a></li>
@@ -956,9 +958,11 @@ Provide recommendations for GDPR compliance, cookie policies, and accessibility 
         </div>
     </footer>
 
+    <!--
     <div class="sticky-cta">
         <a href="#signup" class="px-6 py-3 bg-blue-500 text-white rounded-full hover:bg-blue-600 transition duration-300">Get Started</a>
     </div>
+    -->
 </body>
 
 </html>
