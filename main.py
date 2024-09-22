@@ -26,7 +26,7 @@ async def read_index():
 
 
 @app.post('/api/v1/subscribe')
-async def subscribe_email(subscription_data: SubscriptionData):
+async def subscribe_email(page_url: str, email: str):
     try:
         # Assuming you have a Supabase client set up
         from supabase import create_client, Client
@@ -37,7 +37,7 @@ async def subscribe_email(subscription_data: SubscriptionData):
         supabase: Client = create_client(url, key)
 
         # Insert the email and page_id into Supabase
-        data = supabase.table('subscriptions').insert({"page_url": subscription_data.page_url, "email": subscription_data.email}).execute()
+        data = supabase.table('subscriptions').insert({"page_url": page_url, "email": email}).execute()
 
         return {"message": "Subscription successful"}
     except Exception as e:
