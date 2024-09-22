@@ -25,6 +25,18 @@
             bottom: 10px;
             font-size: 14px;
         }
+
+        #inputString {
+            width: 60%;
+            min-height: 50px;
+            resize: none;
+            overflow: hidden;
+        }
+
+        #generateButton {
+            display: block;
+            margin: 10px auto;
+        }
     </style>
 </head>
 <body align="center" style="margin: 0">
@@ -34,8 +46,8 @@
 
     <h1>Generate Your Landing Page</h1>
 
-    <!-- Input field for string -->
-    <input type="text" id="inputString" placeholder="Enter your idea" size="60">
+    <!-- Textarea for string input -->
+    <textarea id="inputString" placeholder="Enter your idea" rows="1"></textarea>
     <button id="generateButton" onclick="sendRequest()">Generate</button>
 
     <!-- Display the response here -->
@@ -43,11 +55,22 @@
     <p id="response"></p>
 
     <script>
-        // Add an event listener to detect when the Enter key is pressed
-        document.getElementById('inputString').addEventListener('keypress', function(event) {
-            // Check if the Enter key is pressed
-            if (event.key === 'Enter') {
-                // Trigger the button click
+        // Function to auto-resize textarea
+        function autoResize(textarea) {
+            textarea.style.height = 'auto';
+            textarea.style.height = textarea.scrollHeight + 'px';
+        }
+
+        // Add event listeners for textarea
+        const inputTextarea = document.getElementById('inputString');
+        inputTextarea.addEventListener('input', function() {
+            autoResize(this);
+        });
+
+        inputTextarea.addEventListener('keypress', function(event) {
+            // Check if the Enter key is pressed without Shift
+            if (event.key === 'Enter' && !event.shiftKey) {
+                event.preventDefault(); // Prevent default newline
                 document.getElementById('generateButton').click();
             }
         });
