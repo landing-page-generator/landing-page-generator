@@ -26,18 +26,27 @@ async def subscribe_email(request: Request):
     try:
         form_data = await request.form()
         page_url = form_data.get('page_url')
-        email = form_data.get('email')
+        lead_email = form_data.get('email')
 
-        # Assuming you have a Supabase client set up
         from supabase import create_client, Client
         import os
+        from run import send_email
 
         url: str = os.environ.get("SUPABASE_URL")
         key: str = os.environ.get("SUPABASE_KEY")
         supabase: Client = create_client(url, key)
 
         # Insert the email and page_url into Supabase
-        data = supabase.table('leads').insert({"page_url": page_url, "lead_email": email}).execute()
+        data = supabase.table('leads').insert({"page_url": page_url, "lead_email": lead_email}).execute()
+
+        # Get author_email for this page_url
+        result = supabase.table('pages').select('author_email').eq('page_url', page_url).execute()
+        if result.data:
+            author_email = result.data[0]['author_email']
+            # Send email to author about new signup
+            subject = "New Lead Signup"
+            message = f"A new lead has signed up for your landing page: {page_url}\nLead's email: {lead_email}"
+            send_email(author_email, subject, message)
 
         return HTMLResponse("<html><body><h1>Subscription successful</h1></body></html>")
     except Exception as e:
