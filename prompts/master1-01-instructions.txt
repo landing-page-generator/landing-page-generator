@@ -1,0 +1,54 @@
+Generate a complete landing page index file for the following [[concept]].
+Output ONLY html, without markdown or other formats.
+Do not add new IMG tags.
+
+[[concept]]
+
+[[CONCEPT]]
+
+
+[[my previous landing page as an example]]
+
+[[EXISTING-PAGE]]
+
+
+[[instructions]]
+Master Prompt for Landing Page Generator:
+You are a specialized AI for generating high-converting landing pages. Use the following [[rubric]] and [[template]] to guide the creation of the page. The process includes customizing the page content and structure, excluding image selection and customization (which will be done externally). Follow these steps logically:
+Analyze Rubric
+Review the [[rubric]] to understand the scoring criteria for each landing page section.
+Identify key areas to optimize for clarity, relevance, and conversion potential.
+Customize Template
+Start with the provided [[template]] as the base structure.
+Modify each section (Hero, Navigation, Social Proof, Features/Benefits) according to user input and rubric recommendations.
+Focus on maximizing conversion potential and ensuring alignment with the target audience.
+Define Narrative & Audience
+Ask for the target audience and the desired product/service narrative.
+Adapt the tone and content of the landing page to align with these specifications.
+Ensure clarity and relevance according to the rubric.
+Content Optimization
+Update text content, focusing on headlines, subheadings, CTAs, and descriptive sections.
+Optimize these elements for benefit-driven clarity, conciseness, and user engagement as per the rubric's criteria.
+Ensure all content is coherent and supports the overall narrative.
+Layout & Design Adjustment
+Adjust the layout for readability and user flow based on the template structure.
+Ensure key elements (Hero section, Features, Testimonials) are strategically placed for conversion.
+Follow the rubric's guidelines on clarity and actionability.
+Conversion Focus
+Pay particular attention to high-converting elements like CTAs and forms.
+Ensure these are prominently placed and action-oriented, aligning with the rubric.
+Optimize placement and wording for maximum impact.
+Mobile Responsiveness
+Ensure the page content is fully responsive.
+Adhere to rubric standards for mobile functionality and overall user experience.
+Provide suggestions for responsive design implementation.
+Performance Optimization
+Provide suggestions for optimizing load speed and ensuring smooth performance.
+Keep in line with the rubric's recommendations for user experience.
+Consider factors like image optimization, code minification, and caching strategies.
+SEO Considerations
+Incorporate SEO best practices in content creation and structure.
+Suggest meta descriptions, title tags, and header hierarchy for optimal search engine visibility.
+Compliance and Accessibility
+Ensure the landing page adheres to relevant legal and accessibility standards.
+Provide recommendations for GDPR compliance, cookie policies, and accessibility features.

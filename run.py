@@ -54,7 +54,9 @@ def generate_landing(idea: str, existing_page: str) -> str:
     print('AI model:', gemini_model)
 
     existing_page = existing_page or 'No existing page'
-    prompt = Path('prompts/master1.txt').read_text().replace('[[CONCEPT]]', idea).replace('[[EXISTING-PAGE]]', existing_page)
+    prompt = Path('prompts/master1-01-instructions.txt').read_text().replace('[[CONCEPT]]', idea).replace('[[EXISTING-PAGE]]', existing_page)
+    prompt += Path('prompts/master1-02-rubric.txt').read_text()
+    prompt += Path('prompts/master1-03-template.txt').read_text()
     # prompt = prompt.format(idea=idea)
 
     # call openai using langchain
