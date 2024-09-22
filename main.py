@@ -11,7 +11,7 @@ app = FastAPI()
 class InputData(BaseModel):
     idea: str
     existingContent: str | None = None
-    email: EmailStr | None = None
+    email: str | None = None
 
 
 @app.get('/', response_class=HTMLResponse)
