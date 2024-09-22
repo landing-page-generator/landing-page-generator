@@ -85,7 +85,7 @@ def generate_landing(idea: str, existing_page: str) -> str:
 
 
 def generate_random_idea() -> str:
-    prompt = "Generate a random, innovative startup idea in one sentence."
+    prompt = "Generate a random, innovative AI startup idea in one sentence."
     idea = gemini(prompt)
     return idea.strip()
 
