@@ -134,17 +134,26 @@
 
             // If existingUrl is provided, fetch its content
             if (existingUrl) {
-                document.getElementById('response').innerHTML = 'Fetching existing landing page...<br>';
+                document.getElementById('response').innerHTML += 'Fetching existing landing page...<br>';
                 try {
                     const response = await fetch(existingUrl);
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
                     const existingContent = await response.text();
                     data.existingContent = existingContent;
                 } catch (error) {
-                    document.getElementById('response').innerHTML += '<span style="color:red">Error fetching existing URL content: ' + error.message + '</span><br>';
+                    let errorMessage = error.message;
+                    if (error instanceof TypeError) {
+                        errorMessage = 'Network error or invalid URL';
+                    } else if (error.message.includes("404")) {
+                        errorMessage = 'Page not found (404 error)';
+                    }
+                    document.getElementById('response').innerHTML += `<span style="color:red">Error fetching existing URL content: ${errorMessage}</span><br>`;
                 }
             }
 
-            document.getElementById('response').innerHTML = 'Generating a new landing page...<br>';
+            document.getElementById('response').innerHTML += 'Generating a new landing page...<br>';
 
             try {
                 // Send POST request
