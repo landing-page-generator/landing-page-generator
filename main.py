@@ -1,9 +1,9 @@
 import uvicorn
 
 from fastapi import FastAPI, Request
-from fastapi.responses import HTMLResponse
+from fastapi.responses import HTMLResponse, JSONResponse
 from pydantic import BaseModel, EmailStr
-from run import generate_landing
+from run import generate_landing, generate_random_idea
 
 app = FastAPI()
 
@@ -48,7 +48,7 @@ async def subscribe_email(request: Request):
             message_html = f"A new lead has signed up for your landing page: {page_url}<br><br>Lead's email: {lead_email}"
             send_email(author_email, subject, message_html)
 
-        return HTMLResponse("<html><body><h1>Subscription successful</h1></body></html>")
+        return HTMLResponse("<html><body><h1>Sign up successful! We will contact you.</h1></body></html>")
     except Exception as e:
         return HTMLResponse(f"<html><body><h1>Error: {str(e)}</h1></body></html>")
 
@@ -77,6 +77,14 @@ async def generate_landing_api(input_data: InputData):
     except Exception as e:
         return {'url': '', 'message': 'Exception:' + str(e)}
 
+
+@app.get('/api/v1/random-idea')
+async def get_random_idea():
+    try:
+        idea = generate_random_idea()
+        return JSONResponse(content={"idea": idea})
+    except Exception as e:
+        return JSONResponse(content={"error": str(e)}, status_code=500)
 
 
 if __name__ == '__main__':

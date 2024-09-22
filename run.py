@@ -82,6 +82,12 @@ def generate_landing(idea: str, existing_page: str) -> str:
     return url
 
 
+def generate_random_idea() -> str:
+    prompt = "Generate a random, innovative startup idea in one sentence."
+    idea = gemini(prompt)
+    return idea.strip()
+
+
 def main():
     # read idea from sys argv
     if len(sys.argv) < 2:

@@ -66,6 +66,7 @@
     <!-- Input field for user email -->
     <input type="email" id="inputEmail" placeholder="Enter your email for signup notifications (optional)">
     <button id="generateButton" onclick="sendRequest()">Generate</button>
+    <button id="luckyButton" onclick="feelingLucky()">I'm Feeling Lucky</button>
 
     <!-- Display the response here -->
     <p id="response"></p>
@@ -124,9 +125,11 @@
             const input = document.getElementById('inputString').value;
             const existingUrl = document.getElementById('inputUrl').value;
             const userEmail = document.getElementById('inputEmail').value;
-            const button = document.getElementById('generateButton');
+            const generate_button = document.getElementById('generateButton');
+            const feeling_lucky_button = document.getElementById('feelingLucky');
 
-            button.disabled = true;
+            generate_button.disabled = true;
+            feeling_lucky_button.disabled = true;
 
             // Prepare the data to be sent
             let data = { idea: input, email: userEmail };
@@ -192,8 +195,36 @@
                 // Handle any errors
                 document.getElementById('response').innerText = '<span style="color:red">Error: ' + error.message + '</span>';
             }
-            button.disabled = false;
-            button.innerText = 'Generate';
+            generate_button.disabled = false;
+            feeling_lucky_button.disabled = false;
+
+        }
+
+        async function feelingLucky() {
+            const generate_button = document.getElementById('generateButton');
+            const feeling_lucky_button = document.getElementById('feelingLucky');
+
+            generate_button.disabled = true;
+            feeling_lucky_button.disabled = true;
+
+            try {
+                const response = await fetch('/api/v1/random-idea', {
+                    method: 'GET',
+                });
+                const result = await response.json();
+                if (result.idea) {
+                    document.getElementById('inputString').value = result.idea;
+                    autoResize(document.getElementById('inputString'));
+                    sendRequest();
+                } else {
+                    throw new Error('Failed to get random idea');
+                }
+            } catch (error) {
+                document.getElementById('response').innerHTML = `<span style="color:red">Error: ${error.message}</span>`;
+            }
+
+            generate_button.disabled = false;
+            feeling_lucky_button.disabled = false;
 
         }
     </script>
