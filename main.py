@@ -11,7 +11,7 @@ app = FastAPI()
 class InputData(BaseModel):
     idea: str
     existingContent: str | None = None
-    email: EmailStr
+    email: EmailStr | None = None
 
 
 @app.get('/', response_class=HTMLResponse)
@@ -57,20 +57,21 @@ async def subscribe_email(request: Request):
 async def generate_landing_api(input_data: InputData):
     idea = input_data.idea
     existing_page = input_data.existingContent
-    email = input_data.email  # Assuming you've added an email field to InputData
+    author_email = input_data.email
 
     try:
         url = generate_landing(idea, existing_page)
 
         # Save email and URL to Supabase
-        from supabase import create_client, Client
-        import os
+        if author_email:
+            from supabase import create_client, Client
+            import os
 
-        supabase_url: str = os.environ.get("SUPABASE_URL")
-        supabase_key: str = os.environ.get("SUPABASE_KEY")
-        supabase: Client = create_client(supabase_url, supabase_key)
+            supabase_url: str = os.environ.get("SUPABASE_URL")
+            supabase_key: str = os.environ.get("SUPABASE_KEY")
+            supabase: Client = create_client(supabase_url, supabase_key)
 
-        supabase.table('pages').insert({"page_url": url, "author_email": email}).execute()
+            supabase.table('pages').insert({"page_url": url, "author_email": author_email}).execute()
 
         return {'url': url, 'message': 'Please wait a minute while it\'s deployed.'}
     except Exception as e:
