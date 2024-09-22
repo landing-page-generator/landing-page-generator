@@ -42,7 +42,9 @@ async def subscribe_email(request: Request):
         # Get author_email for this page_url
         result = supabase.table('pages').select('author_email').eq('page_url', page_url).execute()
         if result.data:
-            author_email = result.data[0]['author_email']
+            author_email = result.data[0].get('author_email')
+            if not author_email:
+                return HTMLResponse("<html><body><h1>Thank you for your interest! Please come back later.</h1></body></html>")
             # Send email to author about new signup
             subject = "[LPG] New Lead Signup"
             message_html = f"A new lead has signed up for your landing page: {page_url}<br><br>Lead's email: {lead_email}"
