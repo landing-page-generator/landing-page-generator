@@ -3,7 +3,9 @@ Generate a complete landing page index file for the following [[concept]]. Outpu
 **Concept:**
 [[CONCEPT]]
 
+
 **Existing Page Example:**
+[[EXISTING-PAGE]]
 
 
 **Instructions:**

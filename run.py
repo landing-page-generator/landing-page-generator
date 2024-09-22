@@ -54,7 +54,7 @@ def generate_landing(idea: str, existing_page: str) -> str:
     print('AI model:', gemini_model)
 
     if existing_page:
-        existing_page = '[[my previous landing page as an example]]\n\n' + existing_page + '\n\n'
+        existing_page = '**Existing Page Example:**\n\n' + existing_page + '\n\n'
     else:
         existing_page = ''
 
