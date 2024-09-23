@@ -408,7 +408,7 @@
     <section id="signup" class="text-center py-12 bg-blue-100">
         <h2 class="text-3xl font-bold mb-4">Get Started with [Your Brand]</h2>
         <p class="text-gray-600 mb-8">Join us today to revolutionize your business with cutting-edge AI solutions.</p>
-        <form action="https://your-form-handler.com/subscribe" method="post" class="max-w-md mx-auto px-4">
+        <form action="https://landing-page-generator-tau.vercel.app/api/v1/subscribe" method="post" class="max-w-md mx-auto px-4">
             <label for="email" class="sr-only">Email Address</label>
             <input type="email" id="email" name="email" placeholder="Enter your email" class="w-full px-4 py-2 mb-4 border rounded" required>
             <input type="hidden" id="pageUrlField" name="page_url" value="">
