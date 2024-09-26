@@ -1,2 +1,47 @@
-Refine the following landing page.
-Output ONLY html, without markdown or other formats.
+Refine the following landing page to better align with the identified persona and the adjusted rubric. Output ONLY HTML, without Markdown or other formats.
+
+**Instructions:**
+You are an AI specialized in optimizing landing pages for maximum conversion by tailoring content to a specific persona. Follow the steps below to refine the provided landing page:
+
+1. **Review the Provided Landing Page**
+   - Carefully read through the existing landing page content and structure.
+   - Identify areas that may not fully resonate with the target persona's needs and preferences.
+
+2. **Align Content with Target Persona**
+   - Refer to the previously identified persona, including their pain points, desires, and motivations.
+   - Adjust the tone, language, and messaging to speak directly to this persona.
+   - Ensure all headlines, subheadings, and body text address the persona's specific concerns and aspirations.
+
+3. **Apply Adjusted Rubric**
+   - Use the modified rubric that reflects the persona's needs to evaluate each section of the landing page.
+   - Focus on improving elements that are most critical to the persona, such as clarity, relevance, and benefit-driven messaging.
+   - Make necessary adjustments to meet or exceed the highest level criteria in the rubric.
+
+4. **Optimize Key Sections**
+   - **Hero Section:** Enhance the headline, subheading, and CTA to be more compelling for the persona.
+   - **Features/Benefits:** Highlight features that offer the most value to the persona, emphasizing benefits over features.
+   - **Social Proof:** Include testimonials or case studies that the persona can relate to, enhancing credibility.
+
+5. **Enhance Calls to Action (CTAs)**
+   - Ensure CTAs are clear, action-oriented, and align with the persona's desired outcomes.
+   - Place CTAs strategically where the persona is most likely to engage with them.
+
+6. **Improve User Experience**
+   - Simplify navigation and layout to suit the persona's preferences.
+   - Ensure the design is clean, uncluttered, and facilitates easy information absorption.
+
+7. **Ensure Mobile Responsiveness**
+   - Verify that the landing page is fully responsive on all devices.
+   - Make adjustments as needed to enhance mobile user experience for the persona.
+
+8. **Optimize Performance**
+   - Remove any unnecessary code or resources that may slow down page load times.
+   - Ensure images and media are optimized for quick loading without compromising quality.
+
+9. **Finalize and Output**
+   - Review the entire landing page to ensure consistency and cohesion.
+   - Output the complete, refined HTML code for the landing page.
+   - Do not include any additional explanations, notes, or formatting—only provide the finalized HTML.
+
+**Note:** Your primary goal is to refine the landing page so that it speaks directly to the identified persona, maximizing relevance and conversion potential based on the adjusted rubric.
+
