@@ -70,7 +70,7 @@ def generate_landing(idea: str, existing_page: str) -> str:
     # editor_prompt
     refine_prompt = Path('prompts/refine.txt').read_text() + f'\n{html_content}\n'
     refined_html_content = gemini(refine_prompt)
-    refined_html_content = html_content
+    # refined_html_content = html_content
 
     # deploy HTML page to github pages
     now = datetime.datetime.now().timestamp()
