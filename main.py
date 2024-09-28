@@ -37,7 +37,7 @@ async def admin():
 
     # html_files = list_html_files()[::-1]
     content = 'All landing pages generated:<br><ul><li>'
-    content += '</li><li>'.join([f"{page['created_at']}: <a href='{page['url']}'>{page['idea']}</a>" for page in pages])
+    content += '</li><li>'.join([f"{page['created_at']}: <a href='{page['page_url']}'>{page['idea']}</a>" for page in pages])
     content += '</li></ul>'
     return HTMLResponse(content)
 
