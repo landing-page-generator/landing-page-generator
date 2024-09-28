@@ -4,7 +4,7 @@ from datetime import datetime
 from fastapi import FastAPI, Request
 from fastapi.responses import HTMLResponse, JSONResponse
 from pydantic import BaseModel, EmailStr
-from run import generate_landing, generate_random_idea, list_html_files
+from run import generate_landing, generate_random_idea
 
 app = FastAPI()
 
