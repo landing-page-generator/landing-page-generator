@@ -24,9 +24,20 @@ async def read_index():
 
 @app.get('/admin', response_class=HTMLResponse)
 async def admin():
-    html_files = list_html_files()
-    content = 'All landing pages generated:<br><ul>'
-    content += '</li><li>'.join([f"{file['date']}: <a href='{file['url']}'>{file['idea']}</a>" for file in html_files])
+    from supabase import create_client, Client
+    import os
+
+    url: str = os.environ.get("SUPABASE_URL")
+    key: str = os.environ.get("SUPABASE_KEY")
+    supabase: Client = create_client(url, key)
+
+    # Get list of all pages from Supabase
+    pages_result = supabase.table('pages').select('*').execute()
+    pages = pages_result.data
+
+    # html_files = list_html_files()[::-1]
+    content = 'All landing pages generated:<br><ul><li>'
+    content += '</li><li>'.join([f"{page['created_at']}: <a href='{page['url']}'>{page['idea']}</a>" for page in pages])
     content += '</li></ul>'
     return HTMLResponse(content)
 
