@@ -54,19 +54,19 @@ def list_html_files():
                 row = {}
                 try:
                     timestamp = float(file_content.name.split('.')[0])
-                    date = datetime.datetime.fromtimestamp(timestamp).strftime('%Y-%m-%d %H:%M:%S')
+                    date = datetime.datetime.fromtimestamp(timestamp).strftime('%d %b, %Y, %I:%M%p')
                     row['date'] = date
                     
                 except ValueError:
                     row['date'] = 'Unknown'
 
                 # Get the commit that added this file
-                commits = repo.get_commits(path=file_content.path)
-                if commits.totalCount > 0:
-                    latest_commit = commits[0]
-                    row['idea'] = latest_commit.commit.message.replace('Add idea: ', '')
-                else:
-                    row['idea'] = 'Unknown'
+                # commits = repo.get_commits(path=file_content.path)
+                # if commits.totalCount > 0:
+                #     latest_commit = commits[0]
+                #     row['idea'] = latest_commit.commit.message.replace('Add idea: ', '')
+                # else:
+                row['idea'] = 'Unknown'
                     
                 row['name'] = file_content.name
                 row['url'] = f'https://landing-page-generator.github.io/{file_content.name}'

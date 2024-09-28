@@ -25,7 +25,9 @@ async def read_index():
 @app.get('/admin', response_class=HTMLResponse)
 async def admin():
     html_files = list_html_files()
-    content = '<br>'.join(html_files)
+    content = 'All landing pages generated:<br><ul>'
+    content += '</li><li>'.join([f"{file['date']}: <a href='{file['url']}'>{file['idea']}</a>" for file in html_files])
+    content += '</li></ul>'
     return HTMLResponse(content)
 
 
