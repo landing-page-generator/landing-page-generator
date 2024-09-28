@@ -41,8 +41,9 @@ async def admin():
     for page in pages:
         created_at = datetime.strptime(page['created_at'], '%Y-%m-%dT%H:%M:%S.%f%z')
         created_at = created_at.strftime('%d %b, %Y, %I:%M %p')
-        idea = page['idea'][0:50] + '...' if page['idea'] and len(page['idea']) > 50 else page['idea']
-        content += f"<li>{created_at}: <a href='{page['page_url']}'>{idea}</a></li>"
+        full_idea = page['idea']
+        idea = full_idea[:50] + '...' if full_idea and len(full_idea) > 50 else full_idea
+        content += f"<li>{created_at}: <a href='{page['page_url']}' title='{full_idea}'>{idea}</a></li>"
     content += '</ul>'
     return HTMLResponse(content)
 
