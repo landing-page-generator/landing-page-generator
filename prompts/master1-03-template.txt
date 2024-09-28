@@ -38,7 +38,7 @@
         }
 
         .hero-background {
-            background: url('https://yourwebsite.com/path-to-hero-image.jpg') no-repeat center center;
+            background: url('[[HERO-BACKGROUND-IMAGE]]') no-repeat center center;
             background-size: cover;
             height: 100vh;
             display: flex;

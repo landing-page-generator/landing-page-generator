@@ -78,7 +78,8 @@ def generate_landing(idea: str, existing_page: str) -> str:
     html_content = gemini(formatter_prompt)
     # html_content = html_content.replace('```html\n', '').replace('```', '')
 
-    html_content = html_content.replace('HERO-BACKGROUND-IMAGE', get_image_from_pexels(idea))
+    image_url = get_image_from_pexels(idea)
+    html_content = html_content.replace('[[HERO-BACKGROUND-IMAGE]]', image_url)
 
     # deploy HTML page to github pages
     now = datetime.datetime.now().timestamp()
@@ -114,27 +115,25 @@ def main():
 
 
 def get_image_from_pexels(idea): # defunc as for now
-    return ''
     pexels_api_key = os.environ.get("PEXELS_API_KEY")
 
     headers = {
-        'Authorization': pexels_api_key
+        'Authorization': pexels_api_key,
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:106.0) Gecko/20100101 Firefox/106.0',  # to avoid 403 Forbidden
     }
 
-    response = requests.get(f'https://api.pexels.com/v1/search?query={idea}', headers=headers)
-    data = response
-    print(data)
-
+    params = {
+        "query": idea,
+        "per_page": 1
+    }
+    url = "https://api.pexels.com/v1/search"
+    response = requests.get(url, headers=headers, params=params)
+    data = response.json()
     if data['total_results'] > 0:
         photo = data['photos'][0]
-        image_url = photo['src']['large']
-        print(f"Image URL: {image_url}")
+        image_url = photo['src']['original']
         return image_url
-    else:
-        print("No images found for the given query.")
-        return None
-
-
+    return ''
 
 if __name__ == "__main__":
     main()
