@@ -1,5 +1,5 @@
 Refine the following landing page to better align with the identified persona and the adjusted rubric. 
-Output ONLY HTML, without Markdown or other formats.
+Think step by step.
 
 **Instructions:**
 You are an AI specialized in optimizing landing pages for maximum conversion by tailoring content to a specific persona. Follow the steps below to refine the provided landing page:

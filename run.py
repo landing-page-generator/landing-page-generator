@@ -65,12 +65,19 @@ def generate_landing(idea: str, existing_page: str) -> str:
 
     # call openai using langchain
     # html_content = llm.invoke(prompt).content
-    html_content = gemini(prompt)
+    response = gemini(prompt)
+
+    # formatter
+    formatter_prompt = Path('prompts/formatter.txt').read_text() + f'\n{response}\n'
+    html_content = gemini(formatter_prompt)
 
     # editor_prompt
     refine_prompt = Path('prompts/refine.txt').read_text() + f'\n{html_content}\n'
     refined_html_content = gemini(refine_prompt)
-    # refined_html_content = html_content
+
+    # formatter
+    formatter_prompt = Path('prompts/formatter.txt').read_text() + f'\n{response}\n'
+    html_content = gemini(formatter_prompt)
 
     # deploy HTML page to github pages
     now = datetime.datetime.now().timestamp()
@@ -78,7 +85,7 @@ def generate_landing(idea: str, existing_page: str) -> str:
     repo.create_file(
         path=filename,
         message=f'Add idea: {idea}',
-        content=refined_html_content,
+        content=html_content,
         branch='main'
     )
     url = f'https://landing-page-generator.github.io/{filename}'

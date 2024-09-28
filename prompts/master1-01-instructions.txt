@@ -1,4 +1,5 @@
-Generate a complete landing page index file for the following [[concept]]. Output ONLY HTML, without Markdown or other formats. Do not add new IMG tags.
+Generate a complete landing page index file for the following [[Concept]].
+Think step by step.
 
 **Concept:**
 [[CONCEPT]]
