@@ -118,7 +118,7 @@ def main():
     generate_landing(idea)
 
 
-def get_image_from_pexels(idea): # defunc as for now
+def get_image_from_pexels(idea):
     pexels_api_key = os.environ.get("PEXELS_API_KEY")
 
     headers = {
@@ -133,7 +133,7 @@ def get_image_from_pexels(idea): # defunc as for now
     url = "https://api.pexels.com/v1/search"
     response = requests.get(url, headers=headers, params=params)
     data = response.json()
-    if data['total_results'] > 0:
+    if data.get('total_results', 0) > 0:
         photo = data['photos'][0]
         image_url = photo['src']['original']
         return image_url
