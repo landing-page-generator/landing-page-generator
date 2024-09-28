@@ -1,1 +1,1 @@
-Given the following text, extract HTML and output only HTML code from the text below. Return only the HTML content, preserving its structure. Do not include any non-HTML text or formatting. Do not use Markdown.
+Given the following text, extract HTML code and output HTML only. Do not use Markdown.
