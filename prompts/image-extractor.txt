@@ -1,0 +1,1 @@
+Given the following HTML code, extract all IMG tags and output JSON in the following format: [{url: 'image-url-1', description:'description-of-what-should-be-on-this-image'}, ...]

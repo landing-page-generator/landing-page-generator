@@ -78,7 +78,9 @@ def generate_landing(idea: str, existing_page: str) -> str:
     html_content = gemini(formatter_prompt)
     # html_content = html_content.replace('```html\n', '').replace('```', '')
 
-    image_url = get_image_from_pexels(idea)
+    image_hero_prompt = Path('prompts/image-hero.txt').read_text() + f'\n{idea}\n'
+    image_hero_description = gemini(image_hero_prompt)
+    image_url = get_image_from_pexels(image_hero_description)
     html_content = html_content.replace('[[HERO-BACKGROUND-IMAGE]]', image_url)
 
     # img_prompt = Path('prompts/image-extractor.txt').read_text() + f'\n{html_content}\n'
