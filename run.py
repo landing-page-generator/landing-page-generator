@@ -1,5 +1,6 @@
 import datetime
 import os
+import requests
 import sys
 # from langchain_openai import ChatOpenAI
 # from langchain_google_genai import ChatGoogleGenerativeAI
@@ -58,13 +59,10 @@ def generate_landing(idea: str, existing_page: str) -> str:
     else:
         existing_page = ''
 
+    # master prompt
     prompt = Path('prompts/master1-01-instructions.txt').read_text().replace('[[CONCEPT]]', idea).replace('[[EXISTING-PAGE]]', existing_page)
     prompt += Path('prompts/master1-02-rubric.txt').read_text()
     prompt += Path('prompts/master1-03-template.txt').read_text()
-    # prompt = prompt.format(idea=idea)
-
-    # call openai using langchain
-    # html_content = llm.invoke(prompt).content
     response = gemini(prompt)
 
     # formatter
@@ -73,11 +71,14 @@ def generate_landing(idea: str, existing_page: str) -> str:
 
     # editor_prompt
     refine_prompt = Path('prompts/refine.txt').read_text() + f'\n{html_content}\n'
-    refined_html_content = gemini(refine_prompt)
+    html_content = gemini(refine_prompt)
 
     # formatter
     formatter_prompt = Path('prompts/formatter.txt').read_text() + f'\n{response}\n'
     html_content = gemini(formatter_prompt)
+    # html_content = html_content.replace('```html\n', '').replace('```', '')
+
+    html_content = html_content.replace('HERO-BACKGROUND-IMAGE', get_image_from_pexels(idea))
 
     # deploy HTML page to github pages
     now = datetime.datetime.now().timestamp()
@@ -89,10 +90,11 @@ def generate_landing(idea: str, existing_page: str) -> str:
         branch='main'
     )
     url = f'https://landing-page-generator.github.io/{filename}'
+    # url = f'https://landing-page-generator-github-io.onrender.com/{filename}'
     print('URL:', url)
     print('Please wait a minute while it\'s deployed.')
     print()
-    return url, refined_html_content
+    return url, html_content
 
 
 def generate_random_idea() -> str:
@@ -109,6 +111,29 @@ def main():
     idea = sys.argv[1]
     print('Idea:', idea)
     generate_landing(idea)
+
+
+def get_image_from_pexels(idea): # defunc as for now
+    return ''
+    pexels_api_key = os.environ.get("PEXELS_API_KEY")
+
+    headers = {
+        'Authorization': pexels_api_key
+    }
+
+    response = requests.get(f'https://api.pexels.com/v1/search?query={idea}', headers=headers)
+    data = response
+    print(data)
+
+    if data['total_results'] > 0:
+        photo = data['photos'][0]
+        image_url = photo['src']['large']
+        print(f"Image URL: {image_url}")
+        return image_url
+    else:
+        print("No images found for the given query.")
+        return None
+
 
 
 if __name__ == "__main__":

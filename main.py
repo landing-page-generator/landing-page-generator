@@ -82,6 +82,9 @@ async def subscribe_email(request: Request):
         return HTMLResponse(f"<html><body><h1>Error: {str(e)}</h1></body></html>")
 
 
+
+
+
 @app.post('/api/v1/generate')
 async def generate_landing_api(input_data: InputData):
     idea = input_data.idea
