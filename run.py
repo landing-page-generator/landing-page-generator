@@ -81,6 +81,10 @@ def generate_landing(idea: str, existing_page: str) -> str:
     image_url = get_image_from_pexels(idea)
     html_content = html_content.replace('[[HERO-BACKGROUND-IMAGE]]', image_url)
 
+    # img_prompt = Path('prompts/image-extractor.txt').read_text() + f'\n{html_content}\n'
+    # response = gemini(img_prompt)
+    # print(response)
+
     # deploy HTML page to github pages
     now = datetime.datetime.now().timestamp()
     filename = f'{now}.html'
