@@ -1,0 +1,1 @@
+Extract ONLY HTML from the text below, without Markdown or other formats.
