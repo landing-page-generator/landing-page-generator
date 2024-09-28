@@ -50,9 +50,28 @@ def list_html_files():
         if file_content.type == "dir":
             contents.extend(repo.get_contents(file_content.path))
         else:
-            if file_content.name.endswith('.html'):
-                html_files.append(file_content.name)
+            if file_content.name.endswith('.html') and file_content.name != 'index.html':
+                row = {}
+                try:
+                    timestamp = float(file_content.name.split('.')[0])
+                    date = datetime.datetime.fromtimestamp(timestamp).strftime('%Y-%m-%d %H:%M:%S')
+                    row['date'] = date
+                    
+                except ValueError:
+                    row['date'] = 'Unknown'
 
+                # Get the commit that added this file
+                commits = repo.get_commits(path=file_content.path)
+                if commits.totalCount > 0:
+                    latest_commit = commits[0]
+                    row['idea'] = latest_commit.commit.message.replace('Add idea: ', '')
+                else:
+                    row['idea'] = 'Unknown'
+                    
+                row['name'] = file_content.name
+                row['url'] = f'https://landing-page-generator.github.io/{file_content.name}'
+                html_files.append(row)
+    
     return html_files
 
 
