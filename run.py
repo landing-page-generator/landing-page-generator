@@ -38,6 +38,24 @@ def send_email(to_email: str, subject: str, body_html: str):
         server.send_message(message)
 
 
+def list_html_files():
+    auth = Auth.Token(os.environ['GITHUB_ACCESS_TOKEN'])
+    g = Github(auth=auth)
+    repo = g.get_repo('landing-page-generator/landing-page-generator.github.io')
+
+    html_files = []
+    contents = repo.get_contents("")
+    while contents:
+        file_content = contents.pop(0)
+        if file_content.type == "dir":
+            contents.extend(repo.get_contents(file_content.path))
+        else:
+            if file_content.name.endswith('.html'):
+                html_files.append(file_content.name)
+
+    return html_files
+
+
 def generate_landing(idea: str, existing_page: str) -> str:
     # init repo
     auth = Auth.Token(os.environ['GITHUB_ACCESS_TOKEN'])

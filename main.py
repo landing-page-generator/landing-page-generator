@@ -3,7 +3,7 @@ import uvicorn
 from fastapi import FastAPI, Request
 from fastapi.responses import HTMLResponse, JSONResponse
 from pydantic import BaseModel, EmailStr
-from run import generate_landing, generate_random_idea
+from run import generate_landing, generate_random_idea, list_html_files
 
 app = FastAPI()
 
@@ -19,6 +19,13 @@ class InputData(BaseModel):
 async def read_index():
     with open('static/index.html', 'r') as file:
         content = file.read()
+    return HTMLResponse(content)
+
+
+@app.get('/admin', response_class=HTMLResponse)
+async def admin():
+    html_files = list_html_files()
+    content = '<br>'.join(html_files)
     return HTMLResponse(content)
 
 
