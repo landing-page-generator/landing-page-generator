@@ -38,43 +38,6 @@ def send_email(to_email: str, subject: str, body_html: str):
         server.send_message(message)
 
 
-def list_html_files():
-    auth = Auth.Token(os.environ['GITHUB_ACCESS_TOKEN'])
-    g = Github(auth=auth)
-    repo = g.get_repo('landing-page-generator/landing-page-generator.github.io')
-
-    html_files = []
-    contents = repo.get_contents("")
-    while contents:
-        file_content = contents.pop(0)
-        if file_content.type == "dir":
-            contents.extend(repo.get_contents(file_content.path))
-        else:
-            if file_content.name.endswith('.html') and file_content.name != 'index.html':
-                row = {}
-                try:
-                    timestamp = float(file_content.name.split('.')[0])
-                    date = datetime.datetime.fromtimestamp(timestamp).strftime('%d %b, %Y, %I:%M%p')
-                    row['date'] = date
-                    
-                except ValueError:
-                    row['date'] = 'Unknown'
-
-                # Get the commit that added this file
-                # commits = repo.get_commits(path=file_content.path)
-                # if commits.totalCount > 0:
-                #     latest_commit = commits[0]
-                #     row['idea'] = latest_commit.commit.message.replace('Add idea: ', '')
-                # else:
-                row['idea'] = 'Unknown'
-                    
-                row['name'] = file_content.name
-                row['url'] = f'https://landing-page-generator.github.io/{file_content.name}'
-                html_files.append(row)
-    
-    return html_files
-
-
 def generate_landing(idea: str, existing_page: str) -> str:
     # init repo
     auth = Auth.Token(os.environ['GITHUB_ACCESS_TOKEN'])

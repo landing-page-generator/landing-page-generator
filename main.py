@@ -1,5 +1,6 @@
 import uvicorn
 
+from datetime import datetime
 from fastapi import FastAPI, Request
 from fastapi.responses import HTMLResponse, JSONResponse
 from pydantic import BaseModel, EmailStr
@@ -32,13 +33,17 @@ async def admin():
     supabase: Client = create_client(url, key)
 
     # Get list of all pages from Supabase
-    pages_result = supabase.table('pages').select('*').execute()
+    pages_result = supabase.table('pages').select('*').order('created_at', desc=True).limit(50).execute()
     pages = pages_result.data
 
-    # html_files = list_html_files()[::-1]
-    content = 'All landing pages generated:<br><ul><li>'
-    content += '</li><li>'.join([f"{page['created_at']}: <a href='{page['page_url']}'>{page['idea']}</a>" for page in pages])
-    content += '</li></ul>'
+    content = 'Latest 50 landing pages generated:<br><ul>'
+
+    for page in pages:
+        created_at = datetime.strptime(page['created_at'], '%Y-%m-%dT%H:%M:%S.%f%z')
+        created_at = created_at.strftime('%d %b, %Y, %I:%M %p')
+        idea = page['idea'][0:50] + '...' if page['idea'] and len(page['idea']) > 50 else page['idea']
+        content += f"<li>{created_at}: <a href='{page['page_url']}'>{idea}</a></li>"
+    content += '</ul>'
     return HTMLResponse(content)
 
 
